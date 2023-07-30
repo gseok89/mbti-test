@@ -12,7 +12,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffea35;
+  background-color: #8076FD;
   width: 100%;
   max-width: 900px;
   height: 100%;
@@ -22,15 +22,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 700;
 }
 
 .startLogo div:nth-child(1){
   background-color: #413730;
-  color: #ffea35;
-  width: 100px;
-  height: 80px;
+  color: #E9ABFE;
+  width: 500px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,16 +42,18 @@
 }
 
 .startButton{
-  font-size: 17px;
+  font-size: 25px;
   font-weight: 700;
   margin-top: 20px;
+  color: white;
+  cursor: pointer;
 }
 
 
 .questionLayout{
   display: flex;
   flex-direction: column;
-  background-color: #bacee0;
+  background-color: #8076FD;
   width: 100%;
   max-width: 900px;
   height: 100%;
@@ -137,17 +139,18 @@
 }
 
 .chatBox div:nth-child(1){
-  color: #fff;
+  color: #E9ABFE;
   font-size: 12px;
   margin-top: 8px;
 }
 
 .chatBox div:nth-child(2){
   padding: 7px 10px 7px 10px;
-  background-color: #fff;
+  background-color: #E9ABFE;
   margin-left: -4px;
   border-radius: 10px;
   text-align: left;
+  
 }
 
 .aChatBox{
@@ -180,4 +183,22 @@
   border: 1px solid #ededed;
   margin: 0px 20px 15px 20px;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.resultBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+  box-shadow: 2px 2px 0px #ededed;
+  border: 1px solid #ededed;
+  background-color: #413730;
+  color: white;
+  margin: 0px 20px 15px 20px;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  cursor: pointer;
 }

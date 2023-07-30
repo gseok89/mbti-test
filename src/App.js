@@ -135,7 +135,7 @@ function App() {
       {page===0?
         <div className='startPageLayout'>
           <div className='startLogo'>
-            <div>MBTI</div>
+            <div>MBTI 알려드림</div>
             <div>▼</div>
           </div>
           <div onClick={()=>setPage(1)} className='startButton'>테스트 시작하기</div>
@@ -143,7 +143,7 @@ function App() {
         :page <= questionList.length?
         <div className='questionLayout'>
           <div className='mbtiTitle'>
-            <div>MBTI 테스트</div>
+            <div>MBTI 알려드림</div>
             <div>{`${page} / ${questionList.length}`}</div>
           </div>
 
@@ -181,8 +181,8 @@ function App() {
         :
         <div className='questionLayout'>
           <div className='mbtiTitle'>
-            <div>MBTI 테스트</div>
-            <div onClick={()=>window.location.reload()}>다시하기</div>
+            <div>MBTI 알려드림</div>
+            {/* <div onClick={()=>window.location.reload()}>다시하기</div> */}
           </div>
 
           
@@ -209,6 +209,8 @@ function App() {
                   )}
               </div>
             </div>
+
+            <div className='resultBox' onClick={()=>window.location.reload()}>다시하기</div>
             
           </div>
           
