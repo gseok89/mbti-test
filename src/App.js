@@ -135,8 +135,8 @@ function App() {
       {page===0?
         <div className='startPageLayout'>
           <div className='startLogo'>
-            <div>MBTI 알려드림</div>
-            <div>▼</div>
+            <div>화순 여행지</div>
+            <div>테스트<span style={{fontSize : "30px"}}>(연인편)</span></div>
           </div>
           <div onClick={()=>setPage(1)} className='startButton'>테스트 시작하기</div>
         </div>

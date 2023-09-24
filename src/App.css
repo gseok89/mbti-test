@@ -11,10 +11,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-color: #8076FD;
+  justify-content: top;
+  background-color: #FFF7E3;
   width: 100%;
-  max-width: 900px;
+  max-width: 500px;
   height: 100%;
   color: #413730;
 }
@@ -22,31 +22,44 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 35px;
+  /* font-size: 35px; */
   font-weight: 700;
 }
 
 .startLogo div:nth-child(1){
-  background-color: #413730;
-  color: #E9ABFE;
+  /* background-color: #413730; */
+  color: #FF7A01;
   width: 300px;
   height: 100px;
   display: flex;
+  margin-top: 30px;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
+  font-size: 55px;
+  font-family: 'ONE-Mobile-POP';
 }
 
 .startLogo div:nth-child(2){
   margin-top: -15px;
+  color: #333333;
+  font-size: 45px;
+  font-family: 'ONE-Mobile-POP';
 }
 
 .startButton{
   font-size: 25px;
   font-weight: 700;
   margin-top: 20px;
+  align-items: center;
   color: white;
   cursor: pointer;
+}
+
+.startBottomPageLayout{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 
@@ -201,4 +214,11 @@
   font-size: 30px;
   font-weight: 700;
   cursor: pointer;
+}
+
+@font-face {
+  font-family: 'ONE-Mobile-POP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
