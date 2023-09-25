@@ -1,0 +1,102 @@
+.mbti-layout {
+    width: 100vw;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    height: calc(var(--ch,1vh)*100);
+  }
+
+.startPageLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF7E3;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    color: #413730;
+  }
+
+.startLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* font-size: 35px; */
+    font-weight: 700;
+  }
+
+.startLogo div:nth-child(1){
+    /* background-color: #413730; */
+    color: #FF7A01;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 55px;
+    font-family: 'ONE-Mobile-POP';
+  }
+  
+.startLogo div:nth-child(2){
+    margin-top: -15px;
+    color: #333333;
+    font-size: 45px;
+    font-family: 'ONE-Mobile-POP';
+  }
+
+.startImgLayout{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.startImg{
+    height: 232px;
+    width: 246px;
+    background: url('./img/Start_Img.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.startBottomPageLayout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.creditImg{
+    height: 20px;
+    width: 80px;
+    background: url('./img/Credit_Img.png');
+    background-size: cover;
+    background-position: center;
+    margin: 10px 10px 5px 10px;
+}
+
+.startButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80px;
+    text-align: center;
+    white-space: pre-line;
+    background-color: #FFAF00;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-size: 40px;
+    font-family: 'ONE-Mobile-POP';
+  }
+
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
