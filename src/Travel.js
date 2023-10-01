@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import './Travel.css';
 
 function App() {
@@ -16,14 +16,16 @@ function App() {
     }
 
     window.addEventListener('resize', onResize)
-
   },[])
+
+
 
   const [page, setPage] = useState(0)
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const questionList = [
-    {q:['갑자기 일이 생겨서','오늘 못 만날 것 같아'],
-    a:[{type:'I',text:'어쩔 수 없지 뭐ㅠㅠ (오예!!!)'},
+    {q:['포토존 앞에서 어떤 커플이\n사진을 찍어달라고 한다.'],
+    a:[{type:'I',text:'당연하죠! 남자분 고개 이쪽으로 더 땡겨주세요~\n(촬영후) 저희도 찍어주세요! ^o^'},
        {type:'E',text:'어쩔 수 없지 뭐ㅠㅠ (다른사람 누구 만나지?)'}]},
     {q:['너 이번주에 엄청 바빴다며','주말엔 뭐해?'],
     a:[{type:'I',text:'너무 힘들었어ㅠㅠ 집에서 쉬어야지'},
@@ -66,6 +68,7 @@ function App() {
     a:[{type:'',text:'결과 보러 가기'}]}
   ]
 
+
   const [mbtiList, setMbtiList] = useState([
     {name:'I',count:0}, {name:'E',count:0}, {name:'S',count:0}, {name:'N',count:0}, 
     {name:'F',count:0}, {name:'T',count:0}, {name:'P',count:0}, {name:'J',count:0}, 
@@ -84,11 +87,26 @@ function App() {
   setMbtiList(ls)
   setPage(page+1)
 
+  setProgress(page+1)
+
   if(idx+1 === questionList.length)
   {
     setMbti();
   }
  }
+
+
+ const setProgress = useCallback((pageidx) => {
+  var progress = document.querySelector('.questionProgressBar');
+  progress.style.width = (100/questionList.length) * pageidx + '%';
+ }, [questionList])
+
+ useEffect(() => {
+  if(page === 1)
+  {
+    setProgress(1)
+  }
+ }, [page, setProgress])
 
  const [mbtiContents, setMbtiContents] = useState([])
 
@@ -142,7 +160,7 @@ function App() {
             <div className='startImg' />        
           </div>
           <div className='startBottomPageLayout'>
-            <div onClick={()=>setPage(1)} className='startButton'>시작하기</div>
+            <div onClick={()=> setPage(1)} className='startButton'>시작하기</div>
             <div className='creditImg' />
           </div>
           
@@ -150,32 +168,30 @@ function App() {
         :page <= questionList.length?
         <div className='questionLayout'>
           <div className='mbtiTitle'>
-            <div>MBTI 알려드림</div>
+            <div>화순 여행지 테스트</div>
             <div>{`${page} / ${questionList.length}`}</div>
           </div>
 
-          {questionList.map((val,idx)=>
-            <div className='questionList' style={{display:page===idx+1?'flex':'none'}} key={idx}>
-              {console.log(mbtiList)}
-              
-              <div className='questionItemLayout'>
-                <div className='profileImg'>
-                  <div/><div/>
+          <div className='questionProgress'>
+            <div className='questionProgressBg'>
+              <div className='questionProgressBar'>
                 </div>
+            </div>
+          </div>
 
-                <div className='chatListLayout'>
+          {questionList.map((val,idx)=>
+
+              <div className='questionItemLayout'style={{display:page===idx+1?'flex':'none'}} key={idx}>
+                <div className='questionItemImg' />
+
+                <div className='questionItemContent'>
                   {val.q.map((qval,qidx)=>
-                    <div key={qidx} className='chatBox'>
-                      <div>◀</div> <div>{qval}</div>
+                    <div key={qidx}>
+                      <div>{qval}</div>
                     </div>
                   )}
                 </div>
-              </div>
               <div className='answerItemLayout'>
-                <div className='aChatBox'>
-                  <div>+</div> <div>#</div>
-                </div>
-
                 {val.a.map((aval,aidx)=>
                   <div key={aidx} className='answerBox' onClick={()=>handleCkAnswer(aval.type,idx)}>
                     {aval.text}
@@ -183,6 +199,7 @@ function App() {
                 )}
               </div>
             </div>
+
           )}
         </div>
         :
