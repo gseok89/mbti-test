@@ -142,6 +142,16 @@
     background-color: #F29F39;
   }
 
+  .questionProgressDot{
+    background: #F29F39;
+    border: 5px solid #F29F39;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    margin: -8px 0px 0px -20px;
+  }
+
   .questionItemLayout{
     display: flex;
     flex-direction: column;
@@ -172,8 +182,8 @@
 
   .answerItemLayout{
     width: 100%;
-    padding-bottom: 10px;
     display: flex;
+    padding-bottom: 10px;
     flex-direction: column;
     white-space: pre-wrap;
   }
