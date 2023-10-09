@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import './Travel.css';
 
+import startImg from './img/Start_Img.png';
+import resultImg from './img/07.png';
+import linkImg from './img/share_btn.svg';
+import fbImg from './img/facebook.svg';
+import twtImg from './img/twitter.svg';
+import kktImg from './img/kakao.svg';
+import returnImg from './img/testReturn.svg';
+
 function App() {
 
   
@@ -18,7 +26,6 @@ function App() {
 
     window.addEventListener('resize', onResize)
   },[])
-
 
 
   const [page, setPage] = useState(0)
@@ -65,8 +72,8 @@ function App() {
     a:[{type:'P',text:'일단 누워서 쉰다. 다음날 나갈 때 기념품 발견. 여기 둬야겠다!'},
        {type:'J',text:'내가 생각했던 장소에 기념품 안착!'}]},
 
-    {q:['테스트가 모두 끝났어. 결과 보러 갈래?'],
-    a:[{type:'',text:'결과 보러 가기'}]}
+    // {q:['테스트가 모두 끝났어. 결과 보러 갈래?'],
+    // a:[{type:'',text:'결과 보러 가기'}]}
   ]
 
 
@@ -119,6 +126,50 @@ function App() {
 
  const [mbtiContents, setMbtiContents] = useState([])
 
+
+const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변수
+
+  useEffect(() => {
+
+    if(page === questionList.length+1)
+    {
+        // 1초마다 "..." 텍스트를 갱신합니다.
+        const interval = setInterval(() => {
+          setDots((prevDots) => {
+            // "..."이 3개인 경우 초기화하고 3초 후에 함수 이벤트 실행
+            if (prevDots === '...') {
+              setTimeout(() => {
+                // 여기에 실행할 함수 이벤트 추가
+                setPage(page+1)
+                console.log('3초 후 함수 이벤트 실행');
+              }, 2000);
+              return '';
+            }
+            // 그렇지 않으면 한 개씩 추가
+            return prevDots + '.';
+          });
+        }, 400);
+
+        // 컴포넌트가 unmount 될 때 interval을 정리합니다.
+        return () => clearInterval(interval);
+    }
+
+    
+  });
+
+    // 높이를 동적으로 변경할 변수를 선언합니다.
+    const [dynamicHeight, setDynamicHeight] = useState('calc(var(--vh, 1vh) * 100)');
+
+    // 특정 조건에 따라 높이를 변경하는 예시
+    useEffect(() => {
+      // 어떤 조건에서 동적 높이를 변경하고 싶다면 해당 조건을 여기에 추가합니다.
+      if (page === questionList.length+2) {
+        setDynamicHeight('auto'); // 높이를 자동으로 설정
+      } else {
+        setDynamicHeight('calc(var(--vh, 1vh) * 100)'); // 다시 초기값으로 설정
+      }
+    }, [page, questionList]);
+
  function setMbti(){
   let mc = [
     {mbti:'ENTP',contents:['말을 잘해요','이상한 말을 자주 해요','혼자서도 잘 해요']},
@@ -158,7 +209,7 @@ function App() {
  }
 
   return (
-    <div className="mbti-layout">
+    <div className="mbti-layout"  style={{ height: dynamicHeight }}>
       {page===0?
         <div className='startPageLayout'>
           <div className='startLogo'>
@@ -166,7 +217,9 @@ function App() {
             <div>테스트<span style={{fontSize : "30px"}}>(연인편)</span></div>
           </div>
           <div className='startImgLayout'>
-            <div className='startImg' />        
+            <div className='startImg'>
+              <img className='image' src={startImg} alt='' />
+            </div>
           </div>
           <div className='startBottomPageLayout'>
             <div onClick={()=> setPage(1)} className='startButton'>시작하기</div>
@@ -192,7 +245,9 @@ function App() {
           {questionList.map((val,idx)=>
 
               <div className='questionItemLayout'style={{display:page===idx+1?'flex':'none'}} key={idx}>
-                <div className='questionItemImg' />
+                <div className='questionItemImg'>
+                  <img className='image' src={startImg} alt='' />
+                </div>
 
                 <div className='questionItemContent'>
                   {val.q.map((qval,qidx)=>
@@ -215,17 +270,69 @@ function App() {
           )}
 
         </div>
+        :page === questionList.length+1?
+        <div className='LoadingPageLayout'>
+          <div className='questionItemLayout'>
+                <div className='questionItemImg'>
+                  <img className='image' src={startImg} alt='' />
+                </div>
+
+                <div className='questionItemContent'>
+                고인돌에서 광합성 중{dots}
+                </div>
+            </div>
+        </div>
         :
-        <div className='questionLayout'>
-          <div className='mbtiTitle'>
-            <div>MBTI 알려드림</div>
-            {/* <div onClick={()=>window.location.reload()}>다시하기</div> */}
+        <div className='resultPageLayout'>
+
+          <div className='resultBox'>
+            <div className='jobNameLayout'>
+              <div className='jobName'>역사적 탐방자</div>
+              <div className='jobContent'>문화와 휴식을 즐기는 여행자</div>
+            </div>
+            <div className='jobImgWrapper'>
+              <img className='image' src={resultImg} alt='' />
+            </div>
+            <div className='resultContent'>
+              <div className='resultContentTxt'>당신의 <span style={{fontWeight : "800"}}>화순 여행지</span>는</div>
+            </div>
+            <div className='jobImgWrapper'>
+              <img className='image' src={resultImg} alt='' />
+            </div>
+            <div className='placeName'>다산 아트 뮤지엄</div>
+            <div className='placeContent'>역사와 예술을 사랑하는 당신! 다산 미술관에서 휴식과 문화를 만끽하는여행을 떠나보는건 어떠세요?</div>
+            <div className='placeAddress'>전남 화순군 남면 다공길 25 다산 아트 뮤지엄</div>
           </div>
 
-          
-          <div className='questionList' style={{display:'flex'}}>
-            {console.log(mbtiList)}
-            
+          <div className='otherBox'>
+            <div className='otherContent'>이런 곳도 잘 어울려요!</div>
+            <div className='otherLayout'>
+              <div className='otherImgWrapper'>
+              <img className='image' src={resultImg} alt='' />
+              </div>
+              <div className='otherPlaceLayout'>
+                <div className='otherPlaceName'>화순 동가리 계곡</div>
+                <div className='otherPlaceAddress'>전남 화순군 한천면 동산1길 77-11</div>
+              </div>
+            </div>
+          </div>
+
+          <div className='snsBox'>
+            <div className='snsFriendTxt'>친구에게 공유하기</div>
+            <div className='snsList'>
+            <img src={linkImg} alt=''/>
+            <img src={fbImg} alt=''/>
+            <img src={twtImg} alt=''/>
+            <img src={kktImg} alt=''/>
+            </div>
+          </div>
+
+          <div className='shareBox'>
+            <div className='shareBtn'>테스트 공유하기</div>
+            <img className='rePlay' src={returnImg} alt='' onClick={()=>window.location.reload()} />
+          </div>
+                    
+          {/* <div className='questionList' style={{display:'flex'}}>
             <div className='questionItemLayout'>
               <div className='profileImg'>
                 <div/><div/>
@@ -249,7 +356,7 @@ function App() {
 
             <div className='resultBox' onClick={()=>window.location.reload()}>다시하기</div>
             
-          </div>
+          </div> */}
           
         </div>
       }
