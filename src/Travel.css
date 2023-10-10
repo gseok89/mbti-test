@@ -21,8 +21,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* font-size: 35px; */
-    font-weight: 700;
   }
 
 .startLogo div:nth-child(1){
@@ -36,14 +34,14 @@
     justify-content: center;
     border-radius: 50px;
     font-size: 55px;
-    font-family: 'ONE-Mobile-POP';
+    font-family: 'Recipekorea';
   }
   
 .startLogo div:nth-child(2){
-    margin-top: -15px;
+    margin-top: -20px;
     color: #333333;
     font-size: 45px;
-    font-family: 'ONE-Mobile-POP';
+    font-family: 'Recipekorea';
   }
 
 .startImgLayout{
@@ -93,8 +91,8 @@
     border-radius: 15px;
     cursor: pointer;
     color: black;
-    font-size: 40px;
-    font-family: 'ONE-Mobile-POP';
+    font-size: 35px;
+    font-family: 'OAGothic-ExtraBold';
     user-select: none;
   }
 
@@ -115,7 +113,7 @@
     color: #F29F39;
     padding: 15px;
     box-sizing: border-box;
-    font-family: 'ONE-Mobile-POP';
+    font-family: 'Recipekorea';
     font-size: 20px;
   }
   
@@ -175,7 +173,7 @@
     white-space: pre-wrap;
     text-align: center;
     color: black;
-    font-family: 'ONE-Mobile-POP';
+    font-family: 'NPSfontBold';
     font-size: 25px;
     padding: 20px;
   }
@@ -198,6 +196,7 @@
     cursor: pointer;
     user-select: none;
     background-color: #FFAF00;
+    font-family: 'NanumSquareNeo-Variable';
   }
 
   .LoadingPageLayout {
@@ -256,22 +255,20 @@
 .jobName {
   white-space: pre-wrap;
   padding: 20px 0px 0px;
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: 2rem;
   letter-spacing: 0px;
   text-align: center;
-  font-family: 'ONE-Mobile-POP';
+  font-family: 'Recipekorea';
 }
 
 .jobContent {
   white-space: pre-wrap;
-  font-family: Binggrae;
-  font-size: 15px;
-  font-weight: 700;
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 18px;
   letter-spacing: 0px;
   line-height: 1.3;
   text-align: center;
-  padding: 5px 0px 10px;
+  padding: 0px 0px 10px;
 }
 
 .jobImgWrapper {
@@ -298,6 +295,7 @@
   font-weight: 500;
   letter-spacing: 0px;
   text-align: center;
+  font-family: 'NanumSquareNeo-Variable';
 }
 
 .placeName {
@@ -309,10 +307,9 @@
   border-width: 0px 2px 0px 2px;
   white-space: pre-wrap;
   font-size: 2rem;
-  font-weight: 700;
   letter-spacing: 0px;
   text-align: center;
-  font-family: 'ONE-Mobile-POP';
+  font-family: 'Recipekorea';
 }
 
 .placeContent {
@@ -324,6 +321,8 @@
   border-color: rgb(255, 175, 0);
   border-width: 2px 2px 1px 2px;
   text-align: center;
+  white-space: pre-wrap;
+  font-family: 'NanumSquareNeo-Variable';
 }
 
 
@@ -340,9 +339,11 @@
   -webkit-box-align: center;
   align-items: center;
   -webkit-box-pack: start;
-  justify-content: flex-start;
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
+  font-family: 'NanumSquareNeo-Variable';
 }
+
 
 .otherBox {
   width: 100%;
@@ -372,7 +373,7 @@
   flex-direction: column;
   white-space: pre-wrap;
   font-size: 15px;
-  font-weight: 600;
+  font-family: 'NPSfontBold';
 }
 
 .otherLayout {
@@ -391,8 +392,8 @@
 .otherImgWrapper {
   position: relative;
   width: 30%;
-  padding: 0rem;
-  border-radius: 20px;
+  padding: 0.5rem;
+  border-radius: 32px;
   overflow: hidden;
 }
 
@@ -408,13 +409,15 @@
   width: 100%;
   align-items: center;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Recipekorea';
 }
 
 .otherPlaceAddress {
   width: 100%;
   align-items: center;
   text-align: center;
+  font-family: 'Pretendard-Regular';
 }
 
 .snsBox {
@@ -426,6 +429,7 @@
   text-align: center;
   font-weight: 700;
   font-size: 16px;
+  font-family: 'NanumSquareNeo-Variable';
 }
 
 .snsList {
@@ -474,6 +478,7 @@
   background-color: #FFAF00;
   font-size: 25px;
   margin-right: 10px;
+  font-family: 'OAGothic-ExtraBold';
 }
 
 .rePlay {
@@ -498,3 +503,48 @@
     font-weight: normal;
     font-style: normal;
   }
+
+  @font-face {
+    font-family: "Recipekorea";
+    src: url("./fonts/Recipekorea.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'OAGothic-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+ }
+ @font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+ }

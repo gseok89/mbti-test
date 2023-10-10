@@ -2,12 +2,13 @@ import { useCallback, useEffect, useState } from 'react';
 import './Travel.css';
 
 import startImg from './img/Start_Img.png';
-import resultImg from './img/07.png';
 import linkImg from './img/share_btn.svg';
 import fbImg from './img/facebook.svg';
 import twtImg from './img/twitter.svg';
 import kktImg from './img/kakao.svg';
 import returnImg from './img/testReturn.svg';
+import {FaLocationDot} from 'react-icons/fa6';
+
 
 function App() {
 
@@ -125,6 +126,7 @@ function App() {
  }, [page, setProgress])
 
  const [mbtiContents, setMbtiContents] = useState([])
+ const [fitMbti, setFitMbti] = useState([])
 
 
 const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변수
@@ -172,22 +174,183 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
  function setMbti(){
   let mc = [
-    {mbti:'ENTP',contents:['말을 잘해요','이상한 말을 자주 해요','혼자서도 잘 해요']},
-    {mbti:'INTP',contents:['팩폭을 잘해요','감수성이 풍부해요','주관이 뚜렷해요']},
-    {mbti:'ESFJ',contents:['남을 잘 챙겨요','눈치가 빨라요','새로운 사람과의 술자리를 좋아해요']},
-    {mbti:'ESTP',contents:['손재주가 좋아요','리더십이 있어요','표현을 아끼지 않아요']},
-    {mbti:'ISFJ',contents:['남 챙기는 거 좋아해요','공감 잘 해요','내가 싫은 건 남한테도 안 해요']},
-    {mbti:'ISTP',contents:['효율적인 거 좋아해요','관찰력이 뛰어나요','기계조작 잘 하고 좋아해요']},
-    {mbti:'ENFJ',contents:['분위기 메이커예요','리액션을 잘 해요','남에게 싫은 소리를 잘 못해요']},
-    {mbti:'INFJ',contents:['집돌이/집순이 성향이 강해요','사람을 보는 통찰력이 있어요','자신만의 철학이 있어요']},
-    {mbti:'ENTJ',contents:['직감이 좋은 편이에요','주변 사람을 잘 챙겨요','열등감이 없어요']},
-    {mbti:'INTJ',contents:['혼자있는 거 좋아해요','돈 관리 잘해요','공상 많이 해요']},
-    {mbti:'ENFP',contents:['소통과 공감을 잘해요','은근 독립적인 성격이에요','생각을 많이 해요']},
-    {mbti:'INFP',contents:['MBTI 정말 좋아해요','미룰 수 있는 건 끝까지 미뤄요','호불호가 명확해요']},
-    {mbti:'ESFP',contents:['사교성이 좋아요','자존감이 높아요','상처 잘 받는데 또 잘 풀려요']},
-    {mbti:'ISFP',contents:['노는 거 은근 좋아해요','근데 집에 있는 것도 좋아요','마이웨이 성향이 강해요']},
-    {mbti:'ESTJ',contents:['호불호가 명확하고 단호해요','기억력이 좋아요','완벽주의자 기질이 있어요']},
-    {mbti:'ISTJ',contents:['원리원칙적이에요','즉흥적인 거 싫어해요','철벽을 잘 쳐요']},
+    {
+      mbti:'ISTJ',
+      jobname:'역사적 탐방자',
+      jobcontent:'문화와 휴식을 즐기는 여행자',
+      jobimg: require('./img/result/ISTJ_1.png'),
+      placename:'다산 아트 뮤지엄',
+      placecontent:'역사와 예술을 사랑하는 당신!\n다산 미술관에서 휴식과 문화를 만끽하는 여행을 떠나보는 건 어떠세요?',
+      placeaddress:'전남 화순군 남면 다공길 25 다산 아트 뮤지엄',
+      placeimg: require('./img/result/ISTJ_1.png'),
+      fitmbti:'ENFP'
+    },
+    {
+      mbti:'ISFJ',
+      jobname:'치유적인 여행객',
+      jobcontent:'여행객의 치유사',
+      jobimg: require('./img/result/ISFJ_1.png'),
+      placename:'운주사',
+      placecontent:'자연과 역사를 통해 힐링하는 것을 좋아하는 당신!\n운주사에서 천불천탑의 미스테리와 자연을 느껴보는 건 어떠세요?',
+      placeaddress:'전남 화순군 도암면 천태로 91-44 운주사',
+      placeimg: require('./img/result/ISFJ_1.png'),
+      fitmbti:'ENTP'
+    },
+    {
+      mbti:'INFJ',
+      jobname:'문화적 탐험가',
+      jobcontent:'문화발견왕',
+      jobimg: require('./img/result/INFJ_1.png'),
+      placename:'영벽정',
+      placecontent:'독특하고 흥미로운 경험을 좋아하는 당신!\n영벽정에서 화순의 보물같은 경치를 발견해보는 건 어떨까요?',
+      placeaddress:'전라남도 화순군 능주면 관영리 1 영벽정',
+      placeimg: require('./img/result/INFJ_1.png'),
+      fitmbti:'ESTP'
+    },
+    {
+      mbti:'INTJ',
+      jobname:'지적인 여행객',
+      jobcontent:'소소한 지식탐험가',
+      jobimg: require('./img/result/INTJ_1.png'),
+      placename:'소소 미술관',
+      placecontent:'지식과 예술 탐험을 좋아하는 당신!\n소소미술관에서 작지만 깊은 지식을 탐험해보는 건 어떠세요?',
+      placeaddress:'전라남도 화순군 도곡면 지강로 467-1 소소미술관',
+      placeimg: require('./img/result/INTJ_1.png'),
+      fitmbti:'ESFP'
+    },
+    {
+      mbti:'ISTP',
+      jobname:'자연 속의 모험가',
+      jobcontent:'자연 속의 모험러',
+      jobimg: require('./img/result/ISTP_1.png'),
+      placename:'천불천탑',
+      placecontent:'역사의 미스테리와 문화유산과 자연을 좋아하는 당신!\n천개의 탑과 불상이 있었다는 천불천탑의 미스테리를 알아보는 것은 어떠세요?',
+      placeaddress:'전라남도 화순군 도암면 천태로 91-44 천불천탑',
+      placeimg: require('./img/result/ISTP_1.png'),
+      fitmbti:'ENFJ'
+    },
+    {
+      mbti:'ISFP',
+      jobname:'예술과 자연 애호가',
+      jobcontent:'예술과 자연의 친구',
+      jobimg: require('./img/result/ISFP_1.png'),
+      placename:'고인돌 유적지',
+      placecontent:'창의성과 아름다움을 함께 탐구하는 당신!\n화순 고인돌 유적지에서 자연의 아름다움과 선사인들의 발자취를 엿보는 건 어떠세요?',
+      placeaddress:'화순군 도곡면 효산리 64 고인돌유적지',
+      placeimg: require('./img/result/ISFP_1.png'),
+      fitmbti:'ENTJ'
+    },
+    {
+      mbti:'INFP',
+      jobname:'정서적 탐험가',
+      jobcontent:'감성 탐험가',
+      jobimg: require('./img/result/INFP_1.png'),
+      placename:'수만리 철쭉 공원',
+      placecontent:'아름다운 것을 보며 마음의 평화를 원하는 당신!\n수만리 철쭉 공원에서 화순의 감성을 듬뿍 느껴보는 건 어떠세요?',
+      placeaddress:'전남 화순군 화순읍 안양산로 258 수만리 철쭉 공원',
+      placeimg: require('./img/result/INFP_1.png'),
+      fitmbti:'ESTJ'
+    },
+    {
+      mbti:'INTP',
+      jobname:'지적 탐험가',
+      jobcontent:'지식 엔지니어',
+      jobimg: require('./img/result/INTP_1.png'),
+      placename:'화순 거석테마파크',
+      placecontent:'역사와 창의성을 함께 탐구하는 당신!\n화순 거석테마파크에서 세계 거석문화의 신비로움을 느껴보는 건 어떠세요?',
+      placeaddress:'전라남도 화순군 도곡면 효산리 172-1 화순 거석테마파크',
+      placeimg: require('./img/result/INTP_1.png'),
+      fitmbti:'ESFJ'
+    },
+    {
+      mbti:'ESTP',
+      jobname:'액티브한 여행객',
+      jobcontent:'사교의 신',
+      jobimg: require('./img/result/ESTP_1.png'),
+      placename:'무등산 양떼목장',
+      placecontent:'사교성이 좋고 특별한 활동을 좋아하는 당신!\n무등산 양떼목장에서 양들과 특별한 친구가 되어보는건 어떠세요?',
+      placeaddress:'전라남도 화순군 화순읍 안양산로 537 무등산 양떼목장',
+      placeimg: require('./img/result/ESTP_1.png'),
+      fitmbti:'INFJ'
+    },
+    {
+      mbti:'ESFP',
+      jobname:'사교적인 여행객',
+      jobcontent:'소통의 신',
+      jobimg: require('./img/result/ESFP_1.png'),
+      placename:'연둔리 숲정이',
+      placecontent:'소중한 사람과 대화하며 힐링을 원하는 당신!\n이번에는 숲정이 길을 거닐며 소통해보는건 어떠세요?',
+      placeaddress:'전남 화순군 동복면 연둔리 472-1 연둔리 숲정이',
+      placeimg: require('./img/result/ESFP_1.png'),
+      fitmbti:'INTJ'
+    },
+    {
+      mbti:'ENFP',
+      jobname:'엔터테인먼트 애호가',
+      jobcontent:'여행지의 연예인',
+      jobimg: require('./img/result/ENFP_1.png'),
+      placename:'화순 동가리 계곡',
+      placecontent:'댕댕이처럼 뛰어놀기 좋아하는 당신!\n내년 여름에 소중한 사람들과 함께 물놀이 가보는 건 어떠세요?',
+      placeaddress:'전남 화순군 한천면 동산1길 77-11 화순 동가리 계곡',
+      placeimg: require('./img/result/ENFP_1.png'),
+      fitmbti:'ISTJ'
+    },
+    {
+      mbti:'ENTP',
+      jobname:'창의적 탐험가',
+      jobcontent:'아이디어(아이가 사슴탐)',
+      jobimg: require('./img/result/ENTP_1.png'),
+      placename:'백아산 하늘다리',
+      placecontent:'스릴넘치는 경험과 번뜩이는 아이디어가 생기는 여행을 원하는 당신!\n하늘다리를 건너며 자연 속에서 아이디어를 찾아보는 건 어떠세요?',
+      placeaddress:'전남 화순군 백아면 1310-56 백아산 하늘다리',
+      placeimg: require('./img/result/ENTP_1.png'),
+      fitmbti:'ISFJ'
+    },
+    {
+      mbti:'ESTJ',
+      jobname:'주도력 있는 여행객',
+      jobcontent:'효율성의 수호자',
+      jobimg: require('./img/result/ESTJ_1.png'),
+      placename:'세량지',
+      placecontent:'효율적이고 유익한 여행을 추구하는 당신!\n이참에 세량지에서 카메라 효율을 최대로 뽑아보는 건 어떠세요?',
+      placeaddress:'전남 화순군 화순읍 세량리 98 세량지',
+      placeimg: require('./img/result/ESTJ_1.png'),
+      fitmbti:'INFP'
+    },
+    {
+      mbti:'ESFJ',
+      jobname:'친화적인 탐험가',
+      jobcontent:'가정의 수호자',
+      jobimg: require('./img/result/ESFJ_1.png'),
+      placename:'규봉암',
+      placecontent:'사랑과 관계를 소중히 하는 당신!\n소중한 사람과 규봉암에 올라 특별한 추억을 만들어보는 건 어떠세요?',
+      placeaddress:'전남 화순군 이서면 도원길 40-28 규봉암',
+      placeimg: require('./img/result/ESFJ_1.png'),
+      fitmbti:'INTP'
+    },
+    {
+      mbti:'ENFJ',
+      jobname:'사회적 탐험가',
+      jobcontent:'사회적 여행가',
+      jobimg: require('./img/result/ENFJ_1.png'),
+      placename:'동구리 호수공원',
+      placecontent:'다양한 경험과 새로운 사람을 만나는 여행에 관심이 많은 당신!\n동구리 호수공원에서 플로깅을 하면서 벚꽃과 새친구를 만나보는 건 어떨까요?',
+      placeaddress:'전라남도 화순군 화순읍 동구리 122-1 동구리 호수공원',
+      placeimg: require('./img/result/ENFJ_1.png'),
+      fitmbti:'ISTP'
+    },
+    {
+      mbti:'ENTJ',
+      jobname:'리더십 있는 여행객',
+      jobcontent:'자연을 느끼는 자',
+      jobimg: require('./img/result/ENTJ_1.png'),
+      placename:'화순적벽',
+      placecontent:'도전적인 활동과 자기계발을 위한 여행을 좋아하는 당신!\n화순적벽을 여행하며 자연의 웅장함에 도전해보는 건 어떠세요?',
+      placeaddress:'전남 화순군 이서면 월산리 26-4 화순적벽',
+      placeimg: require('./img/result/ENTJ_1.png'),
+      fitmbti:'ISFP'
+    },
+
   ]
 
   let IorE =
@@ -206,6 +369,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
   let mbti = IorE + SorN + ForT + PorJ
 
   setMbtiContents(mc.filter(val=>val.mbti === mbti)[0])
+  setFitMbti(mc.filter(val=>val.fitmbti === mbti)[0])
  }
 
   return (
@@ -287,32 +451,32 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
           <div className='resultBox'>
             <div className='jobNameLayout'>
-              <div className='jobName'>역사적 탐방자</div>
-              <div className='jobContent'>문화와 휴식을 즐기는 여행자</div>
+              <div className='jobName'>{mbtiContents.jobname}</div>
+              <div className='jobContent'>{mbtiContents.jobcontent}</div>
             </div>
             <div className='jobImgWrapper'>
-              <img className='image' src={resultImg} alt='' />
+              <img className='image' src={mbtiContents.jobimg} alt='' />
             </div>
             <div className='resultContent'>
               <div className='resultContentTxt'>당신의 <span style={{fontWeight : "800"}}>화순 여행지</span>는</div>
             </div>
             <div className='jobImgWrapper'>
-              <img className='image' src={resultImg} alt='' />
+              <img className='image' src={mbtiContents.placeimg} alt='' />
             </div>
-            <div className='placeName'>다산 아트 뮤지엄</div>
-            <div className='placeContent'>역사와 예술을 사랑하는 당신! 다산 미술관에서 휴식과 문화를 만끽하는여행을 떠나보는건 어떠세요?</div>
-            <div className='placeAddress'>전남 화순군 남면 다공길 25 다산 아트 뮤지엄</div>
+            <div className='placeName'>{mbtiContents.placename}</div>
+            <div className='placeContent'>{mbtiContents.placecontent}</div>
+            <div className='placeAddress'><FaLocationDot/>{mbtiContents.placeaddress}</div>
           </div>
 
           <div className='otherBox'>
             <div className='otherContent'>이런 곳도 잘 어울려요!</div>
             <div className='otherLayout'>
               <div className='otherImgWrapper'>
-              <img className='image' src={resultImg} alt='' />
+              <img className='image' src={fitMbti.placeimg} alt='' />
               </div>
               <div className='otherPlaceLayout'>
-                <div className='otherPlaceName'>화순 동가리 계곡</div>
-                <div className='otherPlaceAddress'>전남 화순군 한천면 동산1길 77-11</div>
+                <div className='otherPlaceName'>{fitMbti.placename}</div>
+                <div className='otherPlaceAddress'><FaLocationDot/>{fitMbti.placeaddress}</div>
               </div>
             </div>
           </div>
@@ -330,34 +494,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
           <div className='shareBox'>
             <div className='shareBtn'>테스트 공유하기</div>
             <img className='rePlay' src={returnImg} alt='' onClick={()=>window.location.reload()} />
-          </div>
-                    
-          {/* <div className='questionList' style={{display:'flex'}}>
-            <div className='questionItemLayout'>
-              <div className='profileImg'>
-                <div/><div/>
-              </div>
-
-              <div className='chatListLayout'>
-                  <div className='chatBox'>
-                    <div>◀</div> <div>당신의 MBTI는 {mbtiContents.mbti}입니다.</div>
-                  </div>
-                  <div className='chatBox'>
-                    <div>◀</div> <div>{mbtiContents.mbti}는요</div>
-                  </div>
-
-                  {mbtiContents.contents.map((val,idx)=>
-                    <div className='chatBox' key={idx}>
-                    <div>◀</div> <div>{val}</div>
-                    </div>
-                  )}
-              </div>
-            </div>
-
-            <div className='resultBox' onClick={()=>window.location.reload()}>다시하기</div>
-            
-          </div> */}
-          
+          </div>          
         </div>
       }
     </div>
