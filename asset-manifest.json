@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a28eb09e.css",
-    "main.js": "/static/js/main.09d9797d.js",
+    "main.js": "/static/js/main.00320202.js",
     "static/js/787.18c45ccb.chunk.js": "/static/js/787.18c45ccb.chunk.js",
     "static/media/Recipekorea.ttf": "/static/media/Recipekorea.7c8b6d145e70b92f4010.ttf",
     "static/media/INFP_1.png": "/static/media/INFP_1.14411b817d939c557885.png",
@@ -27,11 +27,11 @@
     "static/media/twitter.svg": "/static/media/twitter.62c38040e3b7dc265569cb0634a75232.svg",
     "index.html": "/index.html",
     "main.a28eb09e.css.map": "/static/css/main.a28eb09e.css.map",
-    "main.09d9797d.js.map": "/static/js/main.09d9797d.js.map",
+    "main.00320202.js.map": "/static/js/main.00320202.js.map",
     "787.18c45ccb.chunk.js.map": "/static/js/787.18c45ccb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a28eb09e.css",
-    "static/js/main.09d9797d.js"
+    "static/js/main.00320202.js"
   ]
 }
