@@ -348,7 +348,7 @@
 .otherBox {
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   background-color: transparent;
   -webkit-box-align: center;
   align-items: center;
@@ -486,12 +486,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
+  height: auto;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 15px;
   cursor: pointer;
   user-select: none;
   font-size: 25px;
+  background-color: #FFAF00;
 }
 
 

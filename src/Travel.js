@@ -1,17 +1,34 @@
 import { useCallback, useEffect, useState } from 'react';
 import './Travel.css';
+import { useNavigate } from 'react-router-dom';
 
 import startImg from './img/Start_Img.png';
 import linkImg from './img/share_btn.svg';
 import fbImg from './img/facebook.svg';
 import twtImg from './img/twitter.svg';
 import kktImg from './img/kakao.svg';
-import returnImg from './img/testReturn.svg';
 import {FaLocationDot} from 'react-icons/fa6';
+import { MdReplay } from "react-icons/md";
 
 
 function App() {
 
+  const navigate = useNavigate();
+
+  const goToNavi = () => {
+    navigate(`result/${mbtiIndex}`);
+    
+  }
+
+  const handleCopyClick = (textToCopy) => {
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        alert('텍스트가 복사되었습니다.');
+      })
+      .catch((error) => {
+        console.error('복사 실패:', error);
+      });
+  };
   
   const setVh = () => {
     const vh = window.innerHeight * 0.01;
@@ -33,48 +50,79 @@ function App() {
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const questionList = [
-    {q:['포토존 앞에서 어떤 커플이\n사진을 찍어달라고 한다.'],
-    a:[{type:'I',text:'네~ (최대한 정성스럽게 여러번 찍는다)\n좋은 하루 되세요!'},
-       {type:'E',text:'당연하죠! 남자분 고개 이쪽으로 더 땡겨주세요~\n(촬영후) 저희도 찍어주세요! ^o^'}]},
-    {q:['축제장에 사람이 많아\n활기차고 시끌벅적하다.'],
-    a:[{type:'I',text:'재밌겠다ㅎㅎ\n(이렇게 많을 줄 몰랐는데...)'},
-       {type:'E',text:'와 진짜 재밌는거 많은가 보다ㅋㅋ\n얼른 구경하러 가자!'}]},
-    {q:['축제를 재밌게 즐기고\n집에 도착했다.'],
-    a:[{type:'I',text:'응응 오늘 재밌었어 ㅎㅎ 일단 좀 쉬구 생각해보자!'},
-       {type:'E',text:'다른 축제도 진짜 재밌을 것 같은데 거기도 가보자 ^~^'}]},
+    {
+      q:['포토존 앞에서 어떤 커플이\n사진을 찍어달라고 한다.'],
+      a:[{type:'I',text:'네~ (최대한 정성스럽게 여러번 찍는다)\n좋은 하루 되세요!'},
+          {type:'E',text:'당연하죠! 남자분 고개 이쪽으로 더 땡겨주세요~\n(촬영후) 저희도 찍어주세요! ^o^'}],
+      qimg: require('./img/Start_Img.png')
+    },
+    {
+      q:['축제장에 사람이 많아\n활기차고 시끌벅적하다.'],
+      a:[{type:'I',text:'재밌겠다ㅎㅎ\n(이렇게 많을 줄 몰랐는데...)'},
+          {type:'E',text:'와 진짜 재밌는거 많은가 보다ㅋㅋ\n얼른 구경하러 가자!'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['축제를 재밌게 즐기고\n집에 도착했다.'],
+      a:[{type:'I',text:'응응 오늘 재밌었어 ㅎㅎ 일단 좀 쉬구 생각해보자!'},
+       {type:'E',text:'다른 축제도 진짜 재밌을 것 같은데 거기도 가보자 ^~^'}],
+      qimg: require('./img/result/ISFJ_1.png')
+    },
 
-    {q:['자기야! 화순에서\n가을꽃 축제 한다는데 갈래?'],
-    a:[{type:'S',text:'좋아! 가을꽃 축제에 이쁜 거 많겠다.'},
-       {type:'N',text:'가을꽃 축제? 가을에만 피는 꽃을 말하는 건가?\n가을꽃 종류가 따로 있는 건가? 헷갈리네...'}]},
-    {q:['국화모양의 헬륨 풍선이 있다.\n떠오르는 생각은?'],
-    a:[{type:'S',text:'우와 진짜 이쁘다! 나 저거 사줘!'},
-       {type:'N',text:'헬륨풍선으로 꽃다발 만들면 날아가려나?'}]},
-    {q:['축제에 오는데 내비가\n내가 아는 길로 알려주질 않는다.'],
-    a:[{type:'S',text:'음 내비가 정확하겠지^^ 가라는대로 가보자'},
-       {type:'N',text:'내가 알고 있는 길이 더 빠를 것 같은데?'}]},
-
-    {q:['축제장에 있는 수 많은 꽃들과\n조형물을 보면서 드는 생각은?'],
-    a:[{type:'F',text:'와 진짜 이쁘다. 자기야 나 여기서 찍어줘!'},
-       {type:'T',text:'와 진짜 대단하다. 이건 어떻게 만들었을까?'}]},
-    {q:['사고 싶었지만 비싸서 안 샀던\n기념품을 애인이 몰래 사왔다.'],
-    a:[{type:'F',text:'그거 비쌌을 텐데ㅠㅠ 고마워'},
-       {type:'T',text:'고마워. 그거 진짜 갖고 싶은 거였어'}]},
-    {q:['조금 전에 기념품을 샀는데\n애인이 또 사려고 한다.'],
-    a:[{type:'F',text:'그래! 이쁜건 사야지~'},
-       {type:'T',text:'그거 결국 쓰레기 된다..?'}]},
-
-    {q:['3일 뒤면 가을꽃 축제각.'],
-    a:[{type:'P',text:'축제장 가면 알아서 재밌는 거 많이 있겠지~'},
-       {type:'J',text:'뭐뭐 있는지 알아봐야지'}]},
-    {q:['축제에서 데이트할 때 비용은?'],
-    a:[{type:'P',text:'오늘 얼마 썼더라..? 음 대충 3만원^^ (5만원 넘게 씀)'},
-       {type:'J',text:'이거 먹구 저거 사구.. 오늘은 텅장 안 되게 3만원만 써야겠다!'}]},
-    {q:['축제에서 예쁜 기념품을 사서 온 후,'],
-    a:[{type:'P',text:'일단 누워서 쉰다. 다음날 나갈 때 기념품 발견. 여기 둬야겠다!'},
-       {type:'J',text:'내가 생각했던 장소에 기념품 안착!'}]},
-
-    // {q:['테스트가 모두 끝났어. 결과 보러 갈래?'],
-    // a:[{type:'',text:'결과 보러 가기'}]}
+    {
+      q:['자기야! 화순에서\n가을꽃 축제 한다는데 갈래?'],
+      a:[{type:'S',text:'좋아! 가을꽃 축제에 이쁜 거 많겠다.'},
+       {type:'N',text:'가을꽃 축제? 가을에만 피는 꽃을 말하는 건가?\n가을꽃 종류가 따로 있는 건가? 헷갈리네...'}],
+      qimg: require('./img/result/ESFP_1.png')
+    },
+    {
+      q:['국화모양의 헬륨 풍선이 있다.\n떠오르는 생각은?'],
+      a:[{type:'S',text:'우와 진짜 이쁘다! 나 저거 사줘!'},
+       {type:'N',text:'헬륨풍선으로 꽃다발 만들면 날아가려나?'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['축제에 오는데 내비가\n내가 아는 길로 알려주질 않는다.'],
+      a:[{type:'S',text:'음 내비가 정확하겠지^^ 가라는대로 가보자'},
+       {type:'N',text:'내가 알고 있는 길이 더 빠를 것 같은데?'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['축제장에 있는 수 많은 꽃들과\n조형물을 보면서 드는 생각은?'],
+      a:[{type:'F',text:'와 진짜 이쁘다. 자기야 나 여기서 찍어줘!'},
+       {type:'T',text:'와 진짜 대단하다. 이건 어떻게 만들었을까?'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['사고 싶었지만 비싸서 안 샀던\n기념품을 애인이 몰래 사왔다.'],
+      a:[{type:'F',text:'그거 비쌌을 텐데ㅠㅠ 고마워'},
+       {type:'T',text:'고마워. 그거 진짜 갖고 싶은 거였어'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['조금 전에 기념품을 샀는데\n애인이 또 사려고 한다.'],
+      a:[{type:'F',text:'그래! 이쁜건 사야지~'},
+       {type:'T',text:'그거 결국 쓰레기 된다..?'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['3일 뒤면 가을꽃 축제각.'],
+      a:[{type:'P',text:'축제장 가면 알아서 재밌는 거 많이 있겠지~'},
+       {type:'J',text:'뭐뭐 있는지 알아봐야지'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['축제에서 데이트할 때 비용은?'],
+      a:[{type:'P',text:'오늘 얼마 썼더라..? 음 대충 3만원^^ (5만원 넘게 씀)'},
+       {type:'J',text:'이거 먹구 저거 사구.. 오늘은 텅장 안 되게 3만원만 써야겠다!'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
+    {
+      q:['축제에서 예쁜 기념품을 사서 온 후,'],
+      a:[{type:'P',text:'일단 누워서 쉰다. 다음날 나갈 때 기념품 발견. 여기 둬야겠다!'},
+       {type:'J',text:'내가 생각했던 장소에 기념품 안착!'}],
+      qimg: require('./img/result/ISFP_1.png')
+    },
   ]
 
 
@@ -127,6 +175,7 @@ function App() {
 
  const [mbtiContents, setMbtiContents] = useState([])
  const [fitMbti, setFitMbti] = useState([])
+ const [mbtiIndex, setMbtiIndex] = useState([])
 
 
 const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변수
@@ -143,7 +192,8 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
               setTimeout(() => {
                 // 여기에 실행할 함수 이벤트 추가
                 setPage(page+1)
-                console.log('3초 후 함수 이벤트 실행');
+                // goToNavi()
+                //라우터 링크 넘겨버리기
               }, 2000);
               return '';
             }
@@ -353,6 +403,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
   ]
 
+
   let IorE =
       mbtiList.find(function(data){return data.name === 'I'}).count >
       mbtiList.find(function(data){return data.name === 'E'}).count? 'I':'E'
@@ -368,9 +419,12 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
   let mbti = IorE + SorN + ForT + PorJ
 
+  setMbtiIndex(mc.findIndex(val => val.mbti === mbti))
+
   setMbtiContents(mc.filter(val=>val.mbti === mbti)[0])
   setFitMbti(mc.filter(val=>val.fitmbti === mbti)[0])
  }
+
 
   return (
     <div className="mbti-layout"  style={{ height: dynamicHeight }}>
@@ -410,7 +464,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
               <div className='questionItemLayout'style={{display:page===idx+1?'flex':'none'}} key={idx}>
                 <div className='questionItemImg'>
-                  <img className='image' src={startImg} alt='' />
+                  <img className='image' src={val.qimg} alt='' />
                 </div>
 
                 <div className='questionItemContent'>
@@ -465,7 +519,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
             </div>
             <div className='placeName'>{mbtiContents.placename}</div>
             <div className='placeContent'>{mbtiContents.placecontent}</div>
-            <div className='placeAddress'><FaLocationDot/>{mbtiContents.placeaddress}</div>
+            <div className='placeAddress' onClick={() => handleCopyClick(mbtiContents.placeaddress)}><FaLocationDot/>{mbtiContents.placeaddress}</div>
           </div>
 
           <div className='otherBox'>
@@ -474,7 +528,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
               <div className='otherImgWrapper'>
               <img className='image' src={fitMbti.placeimg} alt='' />
               </div>
-              <div className='otherPlaceLayout'>
+              <div className='otherPlaceLayout' onClick={() => handleCopyClick(fitMbti.placeaddress)}>
                 <div className='otherPlaceName'>{fitMbti.placename}</div>
                 <div className='otherPlaceAddress'><FaLocationDot/>{fitMbti.placeaddress}</div>
               </div>
@@ -493,7 +547,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
 
           <div className='shareBox'>
             <div className='shareBtn'>테스트 공유하기</div>
-            <img className='rePlay' src={returnImg} alt='' onClick={()=>window.location.reload()} />
+            <div className='rePlay' onClick={()=>window.location.reload()}><MdReplay size="40"/></div>
           </div>          
         </div>
       }
