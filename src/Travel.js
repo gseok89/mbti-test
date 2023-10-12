@@ -22,12 +22,6 @@ function App() {
 
   const handleCopyClick = (textToCopy) => {
     navigator.clipboard.writeText(textToCopy)
-      .then(() => {
-        alert('텍스트가 복사되었습니다.');
-      })
-      .catch((error) => {
-        console.error('복사 실패:', error);
-      });
   };
   
   const setVh = () => {
@@ -70,9 +64,9 @@ function App() {
     },
 
     {
-      q:['자기야! 화순에서\n가을꽃 축제 한다는데 갈래?'],
-      a:[{type:'S',text:'좋아! 가을꽃 축제에 이쁜 거 많겠다.'},
-       {type:'N',text:'가을꽃 축제? 가을에만 피는 꽃을 말하는 건가?\n가을꽃 종류가 따로 있는 건가? 헷갈리네...'}],
+      q:['자기야! 화순에서\n국화축제 한다는데 갈래?'],
+      a:[{type:'S',text:'좋아! 국화축제에 이쁜 거 많겠다.'},
+       {type:'N',text:'국화축제? 국화는 우리나라 꽃을 말하는 건가?\n국화라는 꽃이 따로 있는 건가? 헷갈리네...'}],
       qimg: require('./img/result/ESFP_1.png')
     },
     {
@@ -348,7 +342,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
     {
       mbti:'ENTP',
       jobname:'창의적 탐험가',
-      jobcontent:'아이디어(아이가 사슴탐)',
+      jobcontent:'아이디어 발굴가',
       jobimg: require('./img/result/ENTP_1.png'),
       placename:'백아산 하늘다리',
       placecontent:'스릴넘치는 경험과 번뜩이는 아이디어가 생기는 여행을 원하는 당신!\n하늘다리를 건너며 자연 속에서 아이디어를 찾아보는 건 어떠세요?',

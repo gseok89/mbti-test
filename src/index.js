@@ -5,19 +5,19 @@ import Travel from './Travel';
 import Flower from './Flower';
 import TravelResult from './TravelResult';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<Travel />} />
         <Route path='/travel' element={<Travel />} />
         <Route path='/travel/result/:id' element={<TravelResult/>} />
         <Route path='/flower' element={<Flower />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
