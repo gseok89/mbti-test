@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9ac2e0b.css",
-    "main.js": "/static/js/main.59ef5842.js",
+    "main.css": "/static/css/main.d9ed6f29.css",
+    "main.js": "/static/js/main.62c46be2.js",
     "static/js/787.18c45ccb.chunk.js": "/static/js/787.18c45ccb.chunk.js",
     "static/media/Recipekorea.ttf": "/static/media/Recipekorea.7c8b6d145e70b92f4010.ttf",
     "static/media/INFP_1.png": "/static/media/INFP_1.14411b817d939c557885.png",
@@ -27,12 +27,12 @@
     "static/media/share_btn.svg": "/static/media/share_btn.8af4814de7832721d3fbdf902a7da070.svg",
     "static/media/twitter.svg": "/static/media/twitter.62c38040e3b7dc265569cb0634a75232.svg",
     "index.html": "/index.html",
-    "main.c9ac2e0b.css.map": "/static/css/main.c9ac2e0b.css.map",
-    "main.59ef5842.js.map": "/static/js/main.59ef5842.js.map",
+    "main.d9ed6f29.css.map": "/static/css/main.d9ed6f29.css.map",
+    "main.62c46be2.js.map": "/static/js/main.62c46be2.js.map",
     "787.18c45ccb.chunk.js.map": "/static/js/787.18c45ccb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9ac2e0b.css",
-    "static/js/main.59ef5842.js"
+    "static/css/main.d9ed6f29.css",
+    "static/js/main.62c46be2.js"
   ]
 }
