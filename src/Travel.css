@@ -154,6 +154,11 @@
     margin: -8px 0px 0px -20px;
   }
 
+  .progressItemImg{
+    width: 15%;
+    margin: -30px 0px 0px -40px;
+  }
+
   .questionItemLayout{
     display: flex;
     flex-direction: column;
@@ -207,6 +212,10 @@
     max-width: 500px;
     height: 100%;
     color: #413730;
+  }
+
+  .LoadingItemImg{
+    width: 45%;
   }
 
   .resultPageLayout {

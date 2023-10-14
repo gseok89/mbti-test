@@ -5,7 +5,7 @@ import Travel from './Travel';
 import Flower from './Flower';
 import TravelResult from './TravelResult';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes, HashRouter } from 'react-router-dom';
+import { Route, Routes, HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

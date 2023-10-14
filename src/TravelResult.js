@@ -1,4 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 import linkImg from "./img/share_btn.svg";
 import fbImg from "./img/facebook.svg";
@@ -7,6 +9,9 @@ import kktImg from "./img/kakao.svg";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdReplay } from "react-icons/md";
 import { useParams } from "react-router-dom";
+// kakao 기능 동작을 위해 넣어준다.
+const { Kakao } = window;
+
 
 function App() {
   const { id } = useParams();
@@ -229,15 +234,6 @@ function App() {
   
     if (navigator.share) {
 
-      // 웹 페이지의 OGP 이미지를 동적으로 설정
-      const ogImageUrl = resultTravel[id].jobimg;
-
-      // 동적으로 OGP 메타태그 생성
-      const ogImageTag = document.createElement('meta');
-      ogImageTag.setAttribute('property', 'og:image');
-      ogImageTag.setAttribute('content', ogImageUrl);
-      document.head.appendChild(ogImageTag);
-
       navigator.share({
         title: shareTItle, // 원하는 제목으로 변경
         text: shareContent, // 원하는 설명으로 변경
@@ -262,8 +258,50 @@ function App() {
     window.open(`https://www.facebook.com/sharer/sharer.php?u=${sharedLink}`, `${shareTItle}`, 'width=600,height=800,location=no,status=no,scrollbars=yes');
   };
 
+  const shareToKakao = () => {
+    Kakao.Share.sendDefault({
+      objectType: 'feed',
+      content: {
+          title: '나는 화순의 어떤 곳과 어울릴까?',
+          description: shareContent,
+          imageUrl:
+          "https://aldream.kr/logo192.png",
+          link: {
+              mobileWebUrl: shareUrl,
+              webUrl: shareUrl
+          },
+      },
+      buttons: [
+          {
+              title: '테스트 하러가기',
+              link: {
+              mobileWebUrl: window.location.origin + '/#/travel',
+              webUrl: window.location.origin + '/#/travel'
+              },
+          },
+          ],
+      });
+  };
+
+  useEffect(()=>{
+    // init 해주기 전에 clean up 을 해준다.
+      Kakao.cleanup();
+      // 자신의 js 키를 넣어준다.
+      Kakao.init('e4a4e68f0239bd9e37b26d74a067bd3c');
+      // 잘 적용되면 true 를 뱉는다.
+      console.log(Kakao.isInitialized());
+  },[]);
+
+
   return (
     <div className="mbti-layout" style={{ height: "auto" }}>
+
+      <Helmet>
+        <meta property="og:title" content="화순 여행지 테스트" data-react-helmet="true"/>
+        <meta property="og:description" content={shareContent} data-react-helmet="true"/>
+        <meta property="og:image" content={`${process.env.PUBLIC_URL}/logo512.png`} data-react-helmet="true"/>
+      </Helmet>
+
       <div className="resultPageLayout">
         <div className="resultBox">
           <div className="jobNameLayout">
@@ -317,7 +355,7 @@ function App() {
             <img src={linkImg} alt="" onClick={() => handleCopyClick(window.location.origin + '/#' + currentPath)} />
             <img src={fbImg} alt="" onClick={shareToFacebook}/>
             <img src={twtImg} alt="" onClick={shareToTwitter}/>
-            <img src={kktImg} alt="" />
+            <img src={kktImg} alt="" onClick={shareToKakao}/>
           </div>
         </div>
 
