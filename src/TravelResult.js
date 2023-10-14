@@ -262,10 +262,10 @@ function App() {
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-          title: '나는 화순의 어떤 곳과 어울릴까?',
+          title: '화순 여행지 테스트',
           description: shareContent,
           imageUrl:
-          "https://aldream.kr/logo192.png",
+          "https://aldream.kr/Start_Img.png",
           link: {
               mobileWebUrl: shareUrl,
               webUrl: shareUrl

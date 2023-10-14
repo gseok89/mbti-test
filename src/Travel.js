@@ -322,10 +322,10 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
             <div className='questionProgressBg'>
               <div className='questionProgressBar'>
                 </div>
-                <div className='progressItemImg'>
+                {/* <div className='progressItemImg'>
                   <img className='image' src={progressImg} alt='' />
-                </div>
-                {/* <div className='questionProgressDot'/> */}
+                </div> */}
+                <div className='questionProgressDot'/>
             </div>
           </div>
 
