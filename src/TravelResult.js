@@ -21,7 +21,7 @@ function App() {
       mbti: "ISTJ",
       jobname: "역사적 탐방자",
       jobcontent: "문화와 휴식을 즐기는 여행자",
-      jobimg: require("./img/result/ISTJ_1.png"),
+      jobimg: require("./img/result/ISTJ_0.png"),
       placename: "다산 아트 뮤지엄",
       placecontent:
         "역사와 예술을 사랑하는 당신!\n다산 미술관에서 휴식과 문화를 만끽하는 여행을 떠나보는 건 어떠세요?",
@@ -33,7 +33,7 @@ function App() {
       mbti: "ISFJ",
       jobname: "치유적인 여행객",
       jobcontent: "여행객의 치유사",
-      jobimg: require("./img/result/ISFJ_1.png"),
+      jobimg: require("./img/result/ISFJ_0.png"),
       placename: "운주사",
       placecontent:
         "자연과 역사를 통해 힐링하는 것을 좋아하는 당신!\n운주사에서 천불천탑의 미스테리와 자연을 느껴보는 건 어떠세요?",
@@ -45,7 +45,7 @@ function App() {
       mbti: "INFJ",
       jobname: "문화적 탐험가",
       jobcontent: "문화발견왕",
-      jobimg: require("./img/result/INFJ_1.png"),
+      jobimg: require("./img/result/INFJ_0.png"),
       placename: "영벽정",
       placecontent:
         "독특하고 흥미로운 경험을 좋아하는 당신!\n영벽정에서 화순의 보물같은 경치를 발견해보는 건 어떨까요?",
@@ -57,7 +57,7 @@ function App() {
       mbti: "INTJ",
       jobname: "지적인 여행객",
       jobcontent: "소소한 지식탐험가",
-      jobimg: require("./img/result/INTJ_1.png"),
+      jobimg: require("./img/result/INTJ_0.png"),
       placename: "소소 미술관",
       placecontent:
         "지식과 예술 탐험을 좋아하는 당신!\n소소미술관에서 작지만 깊은 지식을 탐험해보는 건 어떠세요?",
@@ -69,7 +69,7 @@ function App() {
       mbti: "ISTP",
       jobname: "자연 속의 모험가",
       jobcontent: "자연 속의 모험러",
-      jobimg: require("./img/result/ISTP_1.png"),
+      jobimg: require("./img/result/ISTP_0.png"),
       placename: "천불천탑",
       placecontent:
         "역사의 미스테리와 문화유산과 자연을 좋아하는 당신!\n천개의 탑과 불상이 있었다는 천불천탑의 미스테리를 알아보는 것은 어떠세요?",
@@ -81,7 +81,7 @@ function App() {
       mbti: "ISFP",
       jobname: "예술과 자연 애호가",
       jobcontent: "예술과 자연의 친구",
-      jobimg: require("./img/result/ISFP_1.png"),
+      jobimg: require("./img/result/ISFP_0.png"),
       placename: "고인돌 유적지",
       placecontent:
         "창의성과 아름다움을 함께 탐구하는 당신!\n화순 고인돌 유적지에서 자연의 아름다움과 선사인들의 발자취를 엿보는 건 어떠세요?",
@@ -93,7 +93,7 @@ function App() {
       mbti: "INFP",
       jobname: "정서적 탐험가",
       jobcontent: "감성 탐험가",
-      jobimg: require("./img/result/INFP_1.png"),
+      jobimg: require("./img/result/INFP_0.png"),
       placename: "수만리 철쭉 공원",
       placecontent:
         "아름다운 것을 보며 마음의 평화를 원하는 당신!\n수만리 철쭉 공원에서 화순의 감성을 듬뿍 느껴보는 건 어떠세요?",
@@ -105,7 +105,7 @@ function App() {
       mbti: "INTP",
       jobname: "지적 탐험가",
       jobcontent: "지식 엔지니어",
-      jobimg: require("./img/result/INTP_1.png"),
+      jobimg: require("./img/result/INTP_0.png"),
       placename: "화순 거석테마파크",
       placecontent:
         "역사와 창의성을 함께 탐구하는 당신!\n화순 거석테마파크에서 세계 거석문화의 신비로움을 느껴보는 건 어떠세요?",
@@ -117,7 +117,7 @@ function App() {
       mbti: "ESTP",
       jobname: "액티브한 여행객",
       jobcontent: "사교의 신",
-      jobimg: require("./img/result/ESTP_1.png"),
+      jobimg: require("./img/result/ESTP_0.png"),
       placename: "무등산 양떼목장",
       placecontent:
         "사교성이 좋고 특별한 활동을 좋아하는 당신!\n무등산 양떼목장에서 양들과 특별한 친구가 되어보는건 어떠세요?",
@@ -129,7 +129,7 @@ function App() {
       mbti: "ESFP",
       jobname: "사교적인 여행객",
       jobcontent: "소통의 신",
-      jobimg: require("./img/result/ESFP_1.png"),
+      jobimg: require("./img/result/ESFP_0.png"),
       placename: "연둔리 숲정이",
       placecontent:
         "소중한 사람과 대화하며 힐링을 원하는 당신!\n이번에는 숲정이 길을 거닐며 소통해보는건 어떠세요?",
@@ -141,7 +141,7 @@ function App() {
       mbti: "ENFP",
       jobname: "엔터테인먼트 애호가",
       jobcontent: "여행지의 연예인",
-      jobimg: require("./img/result/ENFP_1.png"),
+      jobimg: require("./img/result/ENFP_0.png"),
       placename: "화순 동가리 계곡",
       placecontent:
         "댕댕이처럼 뛰어놀기 좋아하는 당신!\n내년 여름에 소중한 사람들과 함께 물놀이 가보는 건 어떠세요?",
@@ -153,7 +153,7 @@ function App() {
       mbti: "ENTP",
       jobname: "창의적 탐험가",
       jobcontent: "아이디어 발굴가",
-      jobimg: require("./img/result/ENTP_1.png"),
+      jobimg: require("./img/result/ENTP_0.png"),
       placename: "백아산 하늘다리",
       placecontent:
         "스릴넘치는 경험과 번뜩이는 아이디어가 생기는 여행을 원하는 당신!\n하늘다리를 건너며 자연 속에서 아이디어를 찾아보는 건 어떠세요?",
@@ -165,7 +165,7 @@ function App() {
       mbti: "ESTJ",
       jobname: "주도력 있는 여행객",
       jobcontent: "효율성의 수호자",
-      jobimg: require("./img/result/ESTJ_1.png"),
+      jobimg: require("./img/result/ESTJ_0.png"),
       placename: "세량지",
       placecontent:
         "효율적이고 유익한 여행을 추구하는 당신!\n이참에 세량지에서 카메라 효율을 최대로 뽑아보는 건 어떠세요?",
@@ -177,7 +177,7 @@ function App() {
       mbti: "ESFJ",
       jobname: "친화적인 탐험가",
       jobcontent: "가정의 수호자",
-      jobimg: require("./img/result/ESFJ_1.png"),
+      jobimg: require("./img/result/ESFJ_0.png"),
       placename: "규봉암",
       placecontent:
         "사랑과 관계를 소중히 하는 당신!\n소중한 사람과 규봉암에 올라 특별한 추억을 만들어보는 건 어떠세요?",
@@ -189,7 +189,7 @@ function App() {
       mbti: "ENFJ",
       jobname: "사회적 탐험가",
       jobcontent: "사회적 여행가",
-      jobimg: require("./img/result/ENFJ_1.png"),
+      jobimg: require("./img/result/ENFJ_0.png"),
       placename: "동구리 호수공원",
       placecontent:
         "다양한 경험과 새로운 사람을 만나는 여행에 관심이 많은 당신!\n동구리 호수공원에서 플로깅을 하면서 벚꽃과 새친구를 만나보는 건 어떨까요?",
@@ -201,7 +201,7 @@ function App() {
       mbti: "ENTJ",
       jobname: "리더십 있는 여행객",
       jobcontent: "자연을 느끼는 자",
-      jobimg: require("./img/result/ENTJ_1.png"),
+      jobimg: require("./img/result/ENTJ_0.png"),
       placename: "화순적벽",
       placecontent:
         "도전적인 활동과 자기계발을 위한 여행을 좋아하는 당신!\n화순적벽을 여행하며 자연의 웅장함에 도전해보는 건 어떠세요?",

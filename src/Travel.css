@@ -286,6 +286,7 @@
   border-width: 2px;
   border-style: solid;
   border-color: rgb(255, 175, 0);
+  background-color: white;
 }
 
 .resultContent {
