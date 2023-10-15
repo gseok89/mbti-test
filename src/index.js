@@ -4,6 +4,7 @@ import './index.css';
 import Travel from './Travel';
 import Flower from './Flower';
 import TravelResult from './TravelResult';
+import FlowerResult from './FlowerResult';
 import reportWebVitals from './reportWebVitals';
 import { Route, Routes, HashRouter } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ root.render(
         <Route path='/travel' element={<Travel />} />
         <Route path='/travel/result/:id' element={<TravelResult/>} />
         <Route path='/flower' element={<Flower />} />
+        <Route path='/flower/result/:id' element={<FlowerResult/>} />
       </Routes>
     </HashRouter>
   </React.StrictMode>

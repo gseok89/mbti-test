@@ -1,0 +1,567 @@
+.mbti-layout {
+    width: 100vw;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    background-color: #eee;
+    height: calc(var(--vh,1vh)*100);
+  }
+
+.startPageLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF7E3;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    color: #413730;
+  }
+
+.startLogo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.startLogo div:nth-child(1){
+    /* background-color: #413730; */
+    color: #FF7A01;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 55px;
+    font-family: 'Recipekorea';
+  }
+  
+.startLogo div:nth-child(2){
+    margin-top: -20px;
+    color: #333333;
+    font-size: 45px;
+    font-family: 'Recipekorea';
+  }
+
+.startImgLayout{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.startImg{
+  width: 60%;
+  height: auto;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.startBottomPageLayout{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+.creditImg{
+    height: 20px;
+    width: 130px;
+    background: url('./img/Credit_Img.png');
+    background-size: cover;
+    background-position: center;
+    margin: 10px 10px 5px 10px;
+}
+
+.startButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 80px;
+    text-align: center;
+    white-space: pre-line;
+    background-color: #FFAF00;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-size: 35px;
+    font-family: 'OAGothic-ExtraBold';
+    user-select: none;
+  }
+
+  .questionLayout{
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF7E3;;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .mbtiTitle{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    color: #F29F39;
+    padding: 15px;
+    box-sizing: border-box;
+    font-family: 'Recipekorea';
+    font-size: 20px;
+  }
+  
+  .mbtiTitle div:nth-child(1){
+    display: flex;
+    flex:1;
+    font-size: 18px;
+  }
+
+  .questionProgress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10px;
+  }
+  .questionProgressBg{
+    display: flex;
+    width: 95%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #FFE090;
+  }
+  .questionProgressBar{
+    height: 100%;
+    border-radius: 10px;
+    background-color: #F29F39;
+  }
+
+  .questionProgressDot{
+    background: #F29F39;
+    border: 5px solid #F29F39;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    margin: -8px 0px 0px -20px;
+  }
+
+  .progressItemImg{
+    width: 15%;
+    margin: -30px 0px 0px -40px;
+  }
+
+  .questionItemLayout{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .questionItemImg{
+    width: 60%;
+  }
+
+  .questionItemContent{
+    display: flex;
+    flex-direction: column;
+    white-space: pre-wrap;
+    text-align: center;
+    color: black;
+    font-family: 'NPSfontBold';
+    font-size: 25px;
+    padding: 20px;
+  }
+
+  .answerItemLayout{
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
+    white-space: pre-wrap;
+  }
+  .answerBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    text-align: center;
+    margin: 0px 20px 15px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #FFAF00;
+    font-family: 'NanumSquareNeo-Variable';
+  }
+
+  .LoadingPageLayout {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF7E3;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    color: #413730;
+  }
+
+  .LoadingItemImg{
+    width: 45%;
+  }
+
+  .resultPageLayout {
+    display: flex;
+    padding: 0rem 1.5rem;
+    flex-direction: column;
+    background-color: #FFF7E3;
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    color: black;
+  }
+
+  .resultPageLayout .mbti-layout {
+    height: auto;
+  }
+
+  .resultBox {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    background-color: transparent;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.jobNameLayout {
+  width: 100%;
+  background-color: rgb(255, 224, 144);
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-width: 2px 2px 0px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobName {
+  white-space: pre-wrap;
+  padding: 20px 0px 0px;
+  font-size: 2rem;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: 'Recipekorea';
+}
+
+.jobContent {
+  white-space: pre-wrap;
+  font-family: 'NanumSquareNeo-Variable';
+  font-size: 18px;
+  letter-spacing: 0px;
+  line-height: 1.3;
+  text-align: center;
+  padding: 0px 0px 10px;
+}
+
+.jobImgWrapper {
+  position: relative;
+  width: 100%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  background-color: white;
+}
+
+.resultContent {
+  width: 100%;
+  padding: 1rem 0rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 224, 144);
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-width: 0px 2px;
+}
+
+.resultContentTxt {
+  white-space: pre-wrap;
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+.placeName {
+  width: 100%;
+  padding: 1rem 0rem;
+  background-color: rgb(255, 224, 144);
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-width: 0px 2px 0px 2px;
+  white-space: pre-wrap;
+  font-size: 2rem;
+  letter-spacing: 0px;
+  text-align: center;
+  font-family: 'Recipekorea';
+}
+
+.placeContent {
+  width: 100%;
+  padding: 1rem 0rem;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-width: 2px 2px 1px 2px;
+  text-align: center;
+  white-space: pre-wrap;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+
+.placeAddress {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0rem;
+  background-color: rgb(255, 255, 255);
+  border-width: 1px 2px 2px 2px;
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: center;
+  flex-direction: row;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+
+.otherBox {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: transparent;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.otherContent {
+  width: 100%;
+  padding: 0.8rem 0rem;
+  background-color: rgb(255, 224, 144);
+  border-style: solid;
+  border-color: rgb(255, 175, 0);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-width: 2px 2px 0px;
+  align-items: center;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  white-space: pre-wrap;
+  font-size: 15px;
+  font-family: 'NPSfontBold';
+}
+
+.otherLayout {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-color: rgb(255, 155, 0);
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-width: 2px 2px 2px 2px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.otherImgWrapper {
+  position: relative;
+  width: 30%;
+  padding: 0.5rem;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.otherPlaceLayout {
+  width: 70%;
+  justify-content: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.otherPlaceName {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Recipekorea';
+}
+
+.otherPlaceAddress {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  font-family: 'Pretendard-Regular';
+}
+
+.snsBox {
+  width: 100%;
+}
+
+.snsFriendTxt {
+  padding-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 16px;
+  font-family: 'NanumSquareNeo-Variable';
+}
+
+.snsList {
+  display: grid;
+  padding-bottom: 1rem;
+  margin-bottom: 0rem;
+  -webkit-box-pack: center;
+  justify-content: center;
+  grid-template-columns: repeat(4, 3.125rem);
+  gap: 0.5rem;
+}
+
+.snsList img {
+  cursor: pointer;
+}
+
+.copyLink {
+
+}
+
+.snsFB {
+
+}
+
+.snsTWT {
+
+}
+
+.snsKKT {
+
+}
+
+.shareBox {
+  width: 100%;
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: row;
+  white-space: pre-wrap;
+}
+
+.shareBtn {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+  background-color: #FFAF00;
+  font-size: 25px;
+  margin-right: 10px;
+  font-family: 'OAGothic-ExtraBold';
+}
+
+.rePlay {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 25px;
+  background-color: #FFAF00;
+}
+
+
+
+
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Recipekorea";
+    src: url("./fonts/Recipekorea.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'NPSfontBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'OAGothic-ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/OAGothic-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+ }
+ @font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+ }
