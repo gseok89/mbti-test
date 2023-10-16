@@ -10,11 +10,11 @@
 .startPageLayout {
     display: flex;
     flex-direction: column;
-    background-color: #FFF7E3;
+    background-color: #ebdfc1;
     width: 100%;
     max-width: 500px;
     height: 100%;
-    color: #413730;
+    color: #49240e;
   }
 
 .startLogo{
@@ -25,7 +25,7 @@
 
 .startLogo div:nth-child(1){
     /* background-color: #413730; */
-    color: #FF7A01;
+    color: #ff651e;
     width: 300px;
     height: 100px;
     display: flex;
@@ -39,7 +39,7 @@
   
 .startLogo div:nth-child(2){
     margin-top: -20px;
-    color: #333333;
+    color: #49240e;
     font-size: 45px;
     font-family: 'Recipekorea';
   }
@@ -90,7 +90,7 @@
     background-color: #FFAF00;
     border-radius: 15px;
     cursor: pointer;
-    color: black;
+    color: #49240e;
     font-size: 35px;
     font-family: 'OAGothic-ExtraBold';
     user-select: none;
@@ -99,7 +99,7 @@
   .questionLayout{
     display: flex;
     flex-direction: column;
-    background-color: #FFF7E3;;
+    background-color: #ebdfc1;;
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -110,7 +110,7 @@
     flex-direction: row;
     width: 100%;
     align-items: center;
-    color: #F29F39;
+    color: #ff7f29;
     padding: 15px;
     box-sizing: border-box;
     font-family: 'Recipekorea';
@@ -136,17 +136,17 @@
     width: 95%;
     height: 100%;
     border-radius: 10px;
-    background-color: #FFE090;
+    background-color: #ffb273;
   }
   .questionProgressBar{
     height: 100%;
     border-radius: 10px;
-    background-color: #F29F39;
+    background-color: #ff7f29;
   }
 
   .questionProgressDot{
-    background: #F29F39;
-    border: 5px solid #F29F39;
+    background: #ff7f29;
+    border: 5px solid #ff7f29;
     box-sizing: border-box;
     width: 25px;
     height: 25px;
@@ -177,7 +177,7 @@
     flex-direction: column;
     white-space: pre-wrap;
     text-align: center;
-    color: black;
+    color: #49240e;
     font-family: 'NPSfontBold';
     font-size: 25px;
     padding: 20px;
@@ -207,7 +207,7 @@
   .LoadingPageLayout {
     display: flex;
     flex-direction: column;
-    background-color: #FFF7E3;
+    background-color: #E9DFBC;
     width: 100%;
     max-width: 500px;
     height: 100%;
@@ -222,11 +222,11 @@
     display: flex;
     padding: 0rem 1.5rem;
     flex-direction: column;
-    background-color: #FFF7E3;
+    background-color: #ebdfc1;
     width: 100%;
     max-width: 500px;
     height: 100%;
-    color: black;
+    color: #49240e;
   }
 
   .resultPageLayout .mbti-layout {
@@ -248,9 +248,9 @@
 
 .jobNameLayout {
   width: 100%;
-  background-color: rgb(255, 224, 144);
+  background-color: rgb(255, 207, 136);
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   border-width: 2px 2px 0px;
@@ -286,7 +286,7 @@
   width: 100%;
   border-width: 2px;
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   background-color: white;
 }
 
@@ -294,9 +294,9 @@
   width: 100%;
   padding: 1rem 0rem;
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 224, 144);
+  background-color: rgb(255, 225, 144);
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   border-width: 0px 2px;
 }
 
@@ -312,9 +312,9 @@
 .placeName {
   width: 100%;
   padding: 1rem 0rem;
-  background-color: rgb(255, 224, 144);
+  background-color: rgb(255, 207, 136);
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   border-width: 0px 2px 0px 2px;
   white-space: pre-wrap;
   font-size: 2rem;
@@ -329,7 +329,7 @@
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   border-width: 2px 2px 1px 2px;
   text-align: center;
   white-space: pre-wrap;
@@ -344,7 +344,7 @@
   background-color: rgb(255, 255, 255);
   border-width: 1px 2px 2px 2px;
   border-style: solid;
-  border-color: rgb(255, 175, 0);
+  border-color: rgb(255, 115, 0);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   -webkit-box-align: center;
@@ -353,6 +353,7 @@
   justify-content: center;
   flex-direction: row;
   font-family: 'NanumSquareNeo-Variable';
+  font-weight: 800;
 }
 
 

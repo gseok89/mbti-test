@@ -6,7 +6,6 @@ import linkImg from "./img/share_btn.svg";
 import fbImg from "./img/facebook.svg";
 import twtImg from "./img/twitter.svg";
 import kktImg from "./img/kakao.svg";
-import { FaLocationDot } from "react-icons/fa6";
 import { MdReplay } from "react-icons/md";
 import { useParams } from "react-router-dom";
 // kakao 기능 동작을 위해 넣어준다.
@@ -19,194 +18,162 @@ function App() {
   let resultTravel = [
     {
       mbti: "ISTJ",
-      jobname: "역사적 탐방자",
-      jobcontent: "문화와 휴식을 즐기는 여행자",
-      jobimg: require("./img/result/ISTJ_0.png"),
-      placename: "다산 아트 뮤지엄",
-      placecontent:
-        "역사와 예술을 사랑하는 당신!\n다산 미술관에서 휴식과 문화를 만끽하는 여행을 떠나보는 건 어떠세요?",
-      placeaddress: "전남 화순군 남면 다공길 25 다산 아트 뮤지엄",
-      placeimg: require("./img/result/ISTJ_1.png"),
+      flowersubname: "신뢰할 수 있는 데이지",
+      flowerimg: require("./img/flower_result/ISTJ_0.png"),
+      flowername: "데이지 (Daisy)",
+      flowercontent:
+        "ISTJ 유형은 신뢰할 수 있고 조직적이며 책임감이 강한 성향을 가지고 있습니다.\n데이지는 ISTJ의 신뢰와 안정성을 상징하며 잘 어울립니다.",
+      flowerlanguage: "데이지의 꽃말은 희망과 평화 입니다.",
       fitmbti: "ENFP",
     },
     {
       mbti: "ISFJ",
-      jobname: "치유적인 여행객",
-      jobcontent: "여행객의 치유사",
-      jobimg: require("./img/result/ISFJ_0.png"),
-      placename: "운주사",
-      placecontent:
-        "자연과 역사를 통해 힐링하는 것을 좋아하는 당신!\n운주사에서 천불천탑의 미스테리와 자연을 느껴보는 건 어떠세요?",
-      placeaddress: "전남 화순군 도암면 천태로 91-44 운주사",
-      placeimg: require("./img/result/ISFJ_1.png"),
+      flowersubname: "애정 넘치는 벚꽃",
+      flowerimg: require("./img/flower_result/ISFJ_0.png"),
+      flowername: "벚꽃 (Cherry Blossom)",
+      flowercontent:
+        "ISFJ 유형은 따뜻하고 돌봄을 주는 성향으로 다른 사람을 위해 노력합니다.\n벚꽃은 ISFJ의 애정과 따뜻한 성격과 잘 어울립니다.",
+      flowerlanguage: "벚꽃의 꽃말은 애정과 사랑입니다.",
       fitmbti: "ENTP",
     },
     {
       mbti: "INFJ",
-      jobname: "문화적 탐험가",
-      jobcontent: "문화발견왕",
-      jobimg: require("./img/result/INFJ_0.png"),
-      placename: "영벽정",
-      placecontent:
-        "독특하고 흥미로운 경험을 좋아하는 당신!\n영벽정에서 화순의 보물같은 경치를 발견해보는 건 어떨까요?",
-      placeaddress: "전라남도 화순군 능주면 관영리 1 영벽정",
-      placeimg: require("./img/result/INFJ_1.png"),
+      flowersubname: "비전을 가진 아카시아",
+      flowerimg: require("./img/flower_result/INFJ_0.png"),
+      flowername: "아카시아 (Acacia)",
+      flowercontent:
+        "NFJ 유형은 비전과 사명을 중요하게 여기며 내적으로 풍부한 성향을 가지고 있습니다.\n아카시아는 INFJ의 비전과 아름다움과 잘 어울립니다.",
+      flowerlanguage: "아카시아의 꽃말은 숨겨진 아름다움과 희망입니다.",
       fitmbti: "ESTP",
     },
     {
       mbti: "INTJ",
-      jobname: "지적인 여행객",
-      jobcontent: "소소한 지식탐험가",
-      jobimg: require("./img/result/INTJ_0.png"),
-      placename: "소소 미술관",
-      placecontent:
-        "지식과 예술 탐험을 좋아하는 당신!\n소소미술관에서 작지만 깊은 지식을 탐험해보는 건 어떠세요?",
-      placeaddress: "전라남도 화순군 도곡면 지강로 467-1 소소미술관",
-      placeimg: require("./img/result/INTJ_1.png"),
+      flowersubname: "논리적인 온시디움",
+      flowerimg: require("./img/flower_result/INTJ_0.png"),
+      flowername: "온시디움 (Oncidium Orchid)",
+      flowercontent:
+        "INTJ 유형은 논리적이며 전략적으로 생각하며 목표를 추구하는 데 집중합니다.\n온시디움의 독특한 형태와 심오한 아름다움은 INTJ의 논리적 성향과 어울립니다.",
+      flowerlanguage: "온시디움의 꽃말은 순박한 마음 입니다.",
       fitmbti: "ESFP",
     },
     {
       mbti: "ISTP",
-      jobname: "자연 속의 모험가",
-      jobcontent: "자연 속의 모험러",
-      jobimg: require("./img/result/ISTP_0.png"),
-      placename: "천불천탑",
-      placecontent:
-        "역사의 미스테리와 문화유산과 자연을 좋아하는 당신!\n천개의 탑과 불상이 있었다는 천불천탑의 미스테리를 알아보는 것은 어떠세요?",
-      placeaddress: "전라남도 화순군 도암면 천태로 91-44 천불천탑",
-      placeimg: require("./img/result/ISTP_1.png"),
+      flowersubname: "지혜로운 아이리스",
+      flowerimg: require("./img/flower_result/ISTP_0.png"),
+      flowername: "아이리스 (Iris)",
+      flowercontent:
+        "ISTP 유형은 논리적이고 분석적이며 문제를 해결하는 데 뛰어난 능력을 가지고 있습니다.\n아이리스의 우아함과 아름다움은 ISTP의 지혜로운 성향과 잘 어울립니다.",
+      flowerlanguage: "아이리스의 꽃말은 지혜와 용기입니다.",
       fitmbti: "ENFJ",
     },
     {
       mbti: "ISFP",
-      jobname: "예술과 자연 애호가",
-      jobcontent: "예술과 자연의 친구",
-      jobimg: require("./img/result/ISFP_0.png"),
-      placename: "고인돌 유적지",
-      placecontent:
-        "창의성과 아름다움을 함께 탐구하는 당신!\n화순 고인돌 유적지에서 자연의 아름다움과 선사인들의 발자취를 엿보는 건 어떠세요?",
-      placeaddress: "화순군 도곡면 효산리 64 고인돌유적지",
-      placeimg: require("./img/result/ISFP_1.png"),
+      flowersubname: "자유로운 마음의 아네모네",
+      flowerimg: require("./img/flower_result/ISFP_0.png"),
+      flowername: "아네모네 (Anemone)",
+      flowercontent:
+        "ISFP 유형은 예술적이며 자유로운 영혼을 가지고 있으며 아름다움을 추구합니다.\n아네모네의 아름다움과 자유로운 성격이 잘 어울립니다.",
+      flowerlanguage: "아네모네의 꽃말은 희망과 기대입니다.",
       fitmbti: "ENTJ",
     },
     {
       mbti: "INFP",
-      jobname: "정서적 탐험가",
-      jobcontent: "감성 탐험가",
-      jobimg: require("./img/result/INFP_0.png"),
-      placename: "수만리 철쭉 공원",
-      placecontent:
-        "아름다운 것을 보며 마음의 평화를 원하는 당신!\n수만리 철쭉 공원에서 화순의 감성을 듬뿍 느껴보는 건 어떠세요?",
-      placeaddress: "전남 화순군 화순읍 안양산로 258 수만리 철쭉 공원",
-      placeimg: require("./img/result/INFP_1.png"),
+      flowersubname: "예술적인 라벤더",
+      flowerimg: require("./img/flower_result/INFP_0.png"),
+      flowername: "라벤더 (Lavender)",
+      flowercontent:
+        "INFP 유형은 예술적이며 창의적이며 내적 가치와 아름다움을 추구합니다.\n라벤더의 아름다움과 평화로운 분위기는 INFP의 예술적인 성향과 어울립니다.",
+      flowerlanguage: "라벤더의 꽃말은 기대와 고요함입니다.",
       fitmbti: "ESTJ",
     },
     {
       mbti: "INTP",
-      jobname: "지적 탐험가",
-      jobcontent: "지식 엔지니어",
-      jobimg: require("./img/result/INTP_0.png"),
-      placename: "화순 거석테마파크",
-      placecontent:
-        "역사와 창의성을 함께 탐구하는 당신!\n화순 거석테마파크에서 세계 거석문화의 신비로움을 느껴보는 건 어떠세요?",
-      placeaddress: "전라남도 화순군 도곡면 효산리 172-1 화순 거석테마파크",
-      placeimg: require("./img/result/INTP_1.png"),
+      flowersubname: "논리적인 안젤리카",
+      flowerimg: require("./img/flower_result/INTP_0.png"),
+      flowername: "안젤리카 (Angelica)",
+      flowercontent:
+        "INTP 유형은 논리적이며 분석적이며 지적 탐구를 중요시하며 독립적인 사고를 가지고 있습니다.\n안젤리카는 신비로움과 지적인 아름다움을 상징하며 INTP의 특성과 잘 어울립니다.",
+      flowerlanguage: "안젤리카의 꽃말은 창조적인 영감과 지혜입니다.",
       fitmbti: "ESFJ",
     },
     {
       mbti: "ESTP",
-      jobname: "액티브한 여행객",
-      jobcontent: "사교의 신",
-      jobimg: require("./img/result/ESTP_0.png"),
-      placename: "무등산 양떼목장",
-      placecontent:
-        "사교성이 좋고 특별한 활동을 좋아하는 당신!\n무등산 양떼목장에서 양들과 특별한 친구가 되어보는건 어떠세요?",
-      placeaddress: "전라남도 화순군 화순읍 안양산로 537 무등산 양떼목장",
-      placeimg: require("./img/result/ESTP_1.png"),
+      flowersubname: "도전적인 개나리",
+      flowerimg: require("./img/flower_result/ESTP_0.png"),
+      flowername: "개나리 (Forsythia)",
+      flowercontent:
+        "ESTP 유형은 활동적이며 도전과 모험을 즐기며 새로운 경험을 추구합니다.\n개나리의 화려한 노란 꽃과 에너지 넘치는 느낌은 ESTP의 도전적인 성향과 잘 어울립니다.",
+      flowerlanguage: "개나리의 꽃말은 새로운 시작과 희망입니다.",
       fitmbti: "INFJ",
     },
     {
       mbti: "ESFP",
-      jobname: "사교적인 여행객",
-      jobcontent: "소통의 신",
-      jobimg: require("./img/result/ESFP_0.png"),
-      placename: "연둔리 숲정이",
-      placecontent:
-        "소중한 사람과 대화하며 힐링을 원하는 당신!\n이번에는 숲정이 길을 거닐며 소통해보는건 어떠세요?",
-      placeaddress: "전남 화순군 동복면 연둔리 472-1 연둔리 숲정이",
-      placeimg: require("./img/result/ESFP_1.png"),
+      flowersubname: "즐거움을 주는 튤립",
+      flowerimg: require("./img/flower_result/ESFP_0.png"),
+      flowername: "튤립 (Tulip)",
+      flowercontent:
+        "ESFP 유형은 사람들과 소통하며 즐거움을 추구하며 활기찬 에너지를 가지고 있습니다.\n튤립의 생기와 색다른 아름다움은 ESFP의 즐거운 성향과 어울립니다.",
+      flowerlanguage: "튤립의 꽃말은 사랑과 성공입니다.",
       fitmbti: "INTJ",
     },
     {
       mbti: "ENFP",
-      jobname: "엔터테인먼트 애호가",
-      jobcontent: "여행지의 연예인",
-      jobimg: require("./img/result/ENFP_0.png"),
-      placename: "화순 동가리 계곡",
-      placecontent:
-        "댕댕이처럼 뛰어놀기 좋아하는 당신!\n내년 여름에 소중한 사람들과 함께 물놀이 가보는 건 어떠세요?",
-      placeaddress: "전남 화순군 한천면 동산1길 77-11 화순 동가리 계곡",
-      placeimg: require("./img/result/ENFP_1.png"),
+      flowersubname: "열정적인 파스틸베고니아",
+      flowerimg: require("./img/flower_result/ENFP_0.png"),
+      flowername: "파스틸베고니아 (Pastel Begonia)",
+      flowercontent:
+        "ENFP 유형은 열정적이며 상상력이 풍부하며 탐험을 즐기며 새로운 경험을 추구합니다.\n파스틸베고니아의 아름다움과 활기찬 성향이 잘 어울립니다.",
+      flowerlanguage: "파스틸베고니아의 꽃말은 열정과 활기입니다.",
       fitmbti: "ISTJ",
     },
     {
       mbti: "ENTP",
-      jobname: "창의적 탐험가",
-      jobcontent: "아이디어 발굴가",
-      jobimg: require("./img/result/ENTP_0.png"),
-      placename: "백아산 하늘다리",
-      placecontent:
-        "스릴넘치는 경험과 번뜩이는 아이디어가 생기는 여행을 원하는 당신!\n하늘다리를 건너며 자연 속에서 아이디어를 찾아보는 건 어떠세요?",
-      placeaddress: "전남 화순군 백아면 1310-56 백아산 하늘다리",
-      placeimg: require("./img/result/ENTP_1.png"),
+      flowersubname: "창의적인 왕자의 깃털",
+      flowerimg: require("./img/flower_result/ENTP_0.png"),
+      flowername: "왕자의 깃털 (Prince's Feather)",
+      flowercontent:
+        "ENTP 유형은 창의적이며 독립적인 사고를 가지고 있으며 새로운 아이디어를 추구합니다.\n왕자의 깃털의 독특한 형태와 창의적인 성향이 잘 어울립니다.",
+      flowerlanguage: "왕자의 깃털의 꽃말은 변화와 창조입니다.",
       fitmbti: "ISFJ",
     },
     {
       mbti: "ESTJ",
-      jobname: "주도력 있는 여행객",
-      jobcontent: "효율성의 수호자",
-      jobimg: require("./img/result/ESTJ_0.png"),
-      placename: "세량지",
-      placecontent:
-        "효율적이고 유익한 여행을 추구하는 당신!\n이참에 세량지에서 카메라 효율을 최대로 뽑아보는 건 어떠세요?",
-      placeaddress: "전남 화순군 화순읍 세량리 98 세량지",
-      placeimg: require("./img/result/ESTJ_1.png"),
+      flowersubname: "책임감 있는 해바라기",
+      flowerimg: require("./img/flower_result/ESTJ_0.png"),
+      flowername: "해바라기 (Sunflower)",
+      flowercontent:
+        "ESTJ 유형은 책임감이 강하며 조직적이고 결단력 있는 성향을 가지고 있습니다.\n해바라기의 밝은 모습과 책임감 있는 성격이 잘 어울립니다.",
+      flowerlanguage: "해바라기의 꽃말은 기다림과 존경입니다.",
       fitmbti: "INFP",
     },
     {
       mbti: "ESFJ",
-      jobname: "친화적인 탐험가",
-      jobcontent: "가정의 수호자",
-      jobimg: require("./img/result/ESFJ_0.png"),
-      placename: "규봉암",
-      placecontent:
-        "사랑과 관계를 소중히 하는 당신!\n소중한 사람과 규봉암에 올라 특별한 추억을 만들어보는 건 어떠세요?",
-      placeaddress: "전남 화순군 이서면 도원길 40-28 규봉암",
-      placeimg: require("./img/result/ESFJ_1.png"),
+      flowersubname: "다정한 피오니",
+      flowerimg: require("./img/flower_result/ESFJ_0.png"),
+      flowername: "피오니 (Peony)",
+      flowercontent:
+        "ESFJ 유형은 다른 사람들을 돌봄으로 채우며 다정하고 사회적인 성향을 가지고 있습니다.\n페오니는 ESFJ의 다정함과 사랑스러운 성격과 잘 어울립니다.",
+      flowerlanguage: "피오니의 꽃말은 행복과 건강입니다.",
       fitmbti: "INTP",
     },
     {
       mbti: "ENFJ",
-      jobname: "사회적 탐험가",
-      jobcontent: "사회적 여행가",
-      jobimg: require("./img/result/ENFJ_0.png"),
-      placename: "동구리 호수공원",
-      placecontent:
-        "다양한 경험과 새로운 사람을 만나는 여행에 관심이 많은 당신!\n동구리 호수공원에서 플로깅을 하면서 벚꽃과 새친구를 만나보는 건 어떨까요?",
-      placeaddress: "전라남도 화순군 화순읍 동구리 122-1 동구리 호수공원",
-      placeimg: require("./img/result/ENFJ_1.png"),
+      flowersubname: "열정적인 백합",
+      flowerimg: require("./img/flower_result/ENFJ_0.png"),
+      flowername: "백합 (Lily)",
+      flowercontent:
+        "ENFJ 유형은 타인과의 관계를 중요하게 여기며 사회적, 열정적이며 동정심이 풍부합니다.\n아름다움과 순결을 상징하는 백합은 ENFJ의 열정적인 성향과 어울립니다.",
+      flowerlanguage: "백합의 꽃말은 순결과 사랑입니다.",
       fitmbti: "ISTP",
     },
     {
       mbti: "ENTJ",
-      jobname: "리더십 있는 여행객",
-      jobcontent: "자연을 느끼는 자",
-      jobimg: require("./img/result/ENTJ_0.png"),
-      placename: "화순적벽",
-      placecontent:
-        "도전적인 활동과 자기계발을 위한 여행을 좋아하는 당신!\n화순적벽을 여행하며 자연의 웅장함에 도전해보는 건 어떠세요?",
-      placeaddress: "전남 화순군 이서면 월산리 26-4 화순적벽",
-      placeimg: require("./img/result/ENTJ_1.png"),
+      flowersubname: "리더십을 상징하는 아마릴리스",
+      flowerimg: require("./img/flower_result/ENTJ_0.png"),
+      flowername: "아마릴리스 (Amaryllis)",
+      flowercontent:
+        "ENTJ 유형은 결단력 있으며 리더십을 추구하며 목표 달성을 중요시합니다.\n아마릴리스는 풍부한 아름다움과 리더십을 상징하며 ENTJ의 특성과 잘 어울립니다.",
+      flowerlanguage: "아마릴리스의 꽃말은 자신감과 성공을 의미합니다.",
       fitmbti: "ISFP",
     },
   ];
@@ -226,8 +193,8 @@ function App() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  const shareTItle = '화순 여행지 테스트!';
-  const shareContent = resultTravel[id].jobname +' - '+ resultTravel[id].placename;
+  const shareTItle = '화순 꽃 MBTI 테스트!';
+  const shareContent = resultTravel[id].mbti +' - '+ resultTravel[id].flowersubname;
   const shareUrl = window.location.origin + '/#' + currentPath;
 
   const handleShare = () => {
@@ -262,10 +229,10 @@ function App() {
     Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
-          title: '화순 여행지 테스트',
+          title: '화순 꽃 MBTI 테스트',
           description: shareContent,
           imageUrl:
-          "https://aldream.kr/Start_Img.png",
+          "https://aldream.kr/Flower_Start.png",
           link: {
               mobileWebUrl: shareUrl,
               webUrl: shareUrl
@@ -275,8 +242,8 @@ function App() {
           {
               title: '테스트 하러가기',
               link: {
-              mobileWebUrl: window.location.origin + '/#/travel',
-              webUrl: window.location.origin + '/#/travel'
+              mobileWebUrl: window.location.origin + '/#/flower',
+              webUrl: window.location.origin + '/#/flower'
               },
           },
           ],
@@ -297,7 +264,7 @@ function App() {
     <div className="mbti-layout" style={{ height: "auto" }}>
 
       <Helmet>
-        <meta property="og:title" content="화순 여행지 테스트" data-react-helmet="true"/>
+        <meta property="og:title" content="화순 꽃 성격 테스트" data-react-helmet="true"/>
         <meta property="og:description" content={shareContent} data-react-helmet="true"/>
         <meta property="og:image" content={`${process.env.PUBLIC_URL}/logo512.png`} data-react-helmet="true"/>
       </Helmet>
@@ -305,28 +272,24 @@ function App() {
       <div className="resultPageLayout">
         <div className="resultBox">
           <div className="jobNameLayout">
-            <div className="jobName">{resultTravel[id].jobname}</div>
-            <div className="jobContent">{resultTravel[id].jobcontent}</div>
+            <div className="jobName">{resultTravel[id].mbti}</div>
+            <div className="jobContent">{resultTravel[id].flowersubname}</div>
           </div>
           <div className="jobImgWrapper">
-            <img className="image" src={resultTravel[id].jobimg} alt="" />
+            <img className="image" src={resultTravel[id].flowerimg} alt="" />
           </div>
           {/* <div className="resultContent">
             <div className="resultContentTxt">
               당신의 <span style={{ fontWeight: "800" }}>화순 여행지</span>는
             </div>
           </div> */}
-          {/* <div className="jobImgWrapper">
+          {/* <div className="flowerimgWrapper">
             <img className="image" src={resultTravel[id].placeimg} alt="" />
           </div> */}
-          <div className="placeName">{resultTravel[id].placename}</div>
-          <div className="placeContent">{resultTravel[id].placecontent}</div>
-          <div
-            className="placeAddress"
-            onClick={() => handleCopyClick(resultTravel[id].placeaddress)}
-          >
-            <FaLocationDot />
-            {resultTravel[id].placeaddress}
+          <div className="placeName">{resultTravel[id].flowername}</div>
+          <div className="placeContent">{resultTravel[id].flowercontent}</div>
+          <div className="placeAddress">
+            {resultTravel[id].flowerlanguage}
           </div>
         </div>
 
@@ -338,12 +301,12 @@ function App() {
             </div>
             <div
               className="otherPlaceLayout"
-              onClick={() => handleCopyClick(fitMbti.placeaddress)}
+              onClick={() => handleCopyClick(fitMbti.flowerlanguage)}
             >
-              <div className="otherPlaceName">{fitMbti.placename}</div>
-              <div className="otherPlaceAddress">
+              <div className="otherflowername">{fitMbti.flowername}</div>
+              <div className="otherflowerlanguage">
                 <FaLocationDot />
-                {fitMbti.placeaddress}
+                {fitMbti.flowerlanguage}
               </div>
             </div>
           </div>

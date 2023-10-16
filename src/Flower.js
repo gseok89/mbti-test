@@ -295,7 +295,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
         <div className='startPageLayout'>
           <div className='startLogo'>
             <div>화순 꽃</div>
-            <div>성격 테스트</div>
+            <div>MBTI 테스트</div>
           </div>
           <div className='startImgLayout'>
             <div className='startImg'>
@@ -311,7 +311,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
         :page <= questionList.length?
         <div className='questionLayout'>
           <div className='mbtiTitle'>
-            <div>화순 꽃 성격 테스트</div>
+            <div>화순 꽃 MBTI 테스트</div>
             <div>{`${page} / ${questionList.length}`}</div>
           </div>
 
