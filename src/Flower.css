@@ -7,7 +7,7 @@
     height: calc(var(--vh,1vh)*100);
   }
 
-.startPageLayout {
+.startFlowerPageLayout {
     display: flex;
     flex-direction: column;
     background-color: #ebdfc1;
@@ -17,13 +17,13 @@
     color: #49240e;
   }
 
-.startLogo{
+.startFlowerLogo{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-.startLogo div:nth-child(1){
+.startFlowerLogo div:nth-child(1){
     /* background-color: #413730; */
     color: #ff651e;
     width: 300px;
@@ -37,7 +37,7 @@
     font-family: 'Recipekorea';
   }
   
-.startLogo div:nth-child(2){
+.startFlowerLogo div:nth-child(2){
     margin-top: -20px;
     color: #49240e;
     font-size: 45px;
@@ -79,7 +79,7 @@
     margin: 10px 10px 5px 10px;
 }
 
-.startButton{
+.startFlowerButton{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +96,7 @@
     user-select: none;
   }
 
-  .questionLayout{
+  .questionFlowerLayout{
     display: flex;
     flex-direction: column;
     background-color: #ebdfc1;;
@@ -105,7 +105,7 @@
     height: 100%;
     overflow: hidden;
   }
-  .mbtiTitle{
+  .mbtiFlowerTitle{
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -117,7 +117,7 @@
     font-size: 20px;
   }
   
-  .mbtiTitle div:nth-child(1){
+  .mbtiFlowerTitle div:nth-child(1){
     display: flex;
     flex:1;
     font-size: 18px;
@@ -131,20 +131,20 @@
     width: 100%;
     height: 10px;
   }
-  .questionProgressBg{
+  .questionFlowerProgressBg{
     display: flex;
     width: 95%;
     height: 100%;
     border-radius: 10px;
     background-color: #ffb273;
   }
-  .questionProgressBar{
+  .questionFlowerProgressBar{
     height: 100%;
     border-radius: 10px;
     background-color: #ff7f29;
   }
 
-  .questionProgressDot{
+  .questionFlowerProgressDot{
     background: #ff7f29;
     border: 5px solid #ff7f29;
     box-sizing: border-box;
@@ -172,7 +172,7 @@
     width: 60%;
   }
 
-  .questionItemContent{
+  .questionFlowerItemContent{
     display: flex;
     flex-direction: column;
     white-space: pre-wrap;
@@ -204,7 +204,7 @@
     font-family: 'NanumSquareNeo-Variable';
   }
 
-  .LoadingPageLayout {
+  .LoadingFlowerPageLayout {
     display: flex;
     flex-direction: column;
     background-color: #E9DFBC;
@@ -218,7 +218,7 @@
     width: 45%;
   }
 
-  .resultPageLayout {
+  .resultFlowerPageLayout {
     display: flex;
     padding: 0rem 1.5rem;
     flex-direction: column;
@@ -229,7 +229,7 @@
     color: #49240e;
   }
 
-  .resultPageLayout .mbti-layout {
+  .resultFlowerPageLayout .mbti-layout {
     height: auto;
   }
 
@@ -246,7 +246,7 @@
     flex-direction: column;
 }
 
-.jobNameLayout {
+.jobNameFlowerLayout {
   width: 100%;
   background-color: rgb(255, 207, 136);
   border-style: solid;
@@ -281,7 +281,7 @@
   padding: 0px 0px 10px;
 }
 
-.jobImgWrapper {
+.jobImgFlowerWrapper {
   position: relative;
   width: 100%;
   border-width: 2px;
@@ -290,7 +290,7 @@
   background-color: white;
 }
 
-.resultContent {
+.resultFlowerContent {
   width: 100%;
   padding: 1rem 0rem;
   color: rgb(0, 0, 0);
@@ -309,7 +309,7 @@
   font-family: 'NanumSquareNeo-Variable';
 }
 
-.placeName {
+.placeFlowerName {
   width: 100%;
   padding: 1rem 0rem;
   background-color: rgb(255, 207, 136);
@@ -323,7 +323,7 @@
   font-family: 'Recipekorea';
 }
 
-.placeContent {
+.placeFlowerContent {
   width: 100%;
   padding: 1rem 0rem;
   color: rgb(0, 0, 0);
@@ -337,7 +337,7 @@
 }
 
 
-.placeAddress {
+.placeFlowerAddress {
   width: 100%;
   display: flex;
   padding: 1rem 0rem;

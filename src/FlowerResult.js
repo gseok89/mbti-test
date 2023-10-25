@@ -269,13 +269,13 @@ function App() {
         <meta property="og:image" content={`${process.env.PUBLIC_URL}/logo512.png`} data-react-helmet="true"/>
       </Helmet>
 
-      <div className="resultPageLayout">
+      <div className="resultFlowerPageLayout">
         <div className="resultBox">
-          <div className="jobNameLayout">
+          <div className="jobNameFlowerLayout">
             <div className="jobName">{resultTravel[id].mbti}</div>
             <div className="jobContent">{resultTravel[id].flowersubname}</div>
           </div>
-          <div className="jobImgWrapper">
+          <div className="jobImgFlowerWrapper">
             <img className="image" src={resultTravel[id].flowerimg} alt="" />
           </div>
           {/* <div className="resultContent">
@@ -286,9 +286,9 @@ function App() {
           {/* <div className="flowerimgWrapper">
             <img className="image" src={resultTravel[id].placeimg} alt="" />
           </div> */}
-          <div className="placeName">{resultTravel[id].flowername}</div>
-          <div className="placeContent">{resultTravel[id].flowercontent}</div>
-          <div className="placeAddress">
+          <div className="placeFlowerName">{resultTravel[id].flowername}</div>
+          <div className="placeFlowerContent">{resultTravel[id].flowercontent}</div>
+          <div className="placeFlowerAddress">
             {resultTravel[id].flowerlanguage}
           </div>
         </div>

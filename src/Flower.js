@@ -137,7 +137,7 @@ function App() {
  }
 
  const setProgress = useCallback((pageidx) => {
-  var progress = document.querySelector('.questionProgressBar');
+  var progress = document.querySelector('.questionFlowerProgressBar');
   
   let t = (100/questionList.length) * (pageidx - 1)
   
@@ -292,8 +292,8 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
         <meta property="og:image" content={`${process.env.PUBLIC_URL}/logo512.png`} data-react-helmet="true"/>
       </Helmet>
       {page===0?
-        <div className='startPageLayout'>
-          <div className='startLogo'>
+        <div className='startFlowerPageLayout'>
+          <div className='startFlowerLogo'>
             <div>화순 꽃</div>
             <div>MBTI 테스트</div>
           </div>
@@ -303,26 +303,26 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
             </div>
           </div>
           <div className='startBottomPageLayout'>
-            <div onClick={()=> setPage(1)} className='startButton'>시작하기</div>
+            <div onClick={()=> setPage(1)} className='startFlowerButton'>시작하기</div>
             <div className='creditImg' />
           </div>
           
         </div>
         :page <= questionList.length?
-        <div className='questionLayout'>
-          <div className='mbtiTitle'>
+        <div className='questionFlowerLayout'>
+          <div className='mbtiFlowerTitle'>
             <div>화순 꽃 MBTI 테스트</div>
             <div>{`${page} / ${questionList.length}`}</div>
           </div>
 
           <div className='questionProgress'>
-            <div className='questionProgressBg'>
-              <div className='questionProgressBar'>
+            <div className='questionFlowerProgressBg'>
+              <div className='questionFlowerProgressBar'>
                 </div>
                 {/* <div className='progressItemImg'>
                   <img className='image' src={progressImg} alt='' />
                 </div> */}
-                <div className='questionProgressDot'/>
+                <div className='questionFlowerProgressDot'/>
             </div>
           </div>
 
@@ -333,7 +333,7 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
                   <img className='image' src={val.qimg} alt='' />
                 </div> */}
 
-                <div className='questionItemContent'>
+                <div className='questionFlowerItemContent'>
                   {val.q.map((qval,qidx)=>
                     <div key={qidx}>
                       <div>{qval}</div>
@@ -356,13 +356,13 @@ const [dots, setDots] = useState(''); // "..." 텍스트를 저장할 상태 변
         </div>
         // :page === questionList.length+1?
         :
-        <div className='LoadingPageLayout'>
+        <div className='LoadingFlowerPageLayout'>
           <div className='questionItemLayout'>
                 <div className='LoadingItemImg'>
                   <img className='image' src={loadingImg} alt='' />
                 </div>
 
-                <div className='questionItemContent'>
+                <div className='questionFlowerItemContent'>
                 꽃을 피워내는 중{dots}
                 </div>
             </div>
